@@ -1,29 +1,52 @@
 <template>
-  <div id="app">
-   <header-componente></header-componente>
-  </div>
+  <v-app>
+
+
+
+
+
+    <v-main>
+      <header-componente></header-componente>
+    </v-main>
+
+  </v-app>
 </template>
 
 <script>
 
 import HeaderComponente from "@/components/header-componente";
+import {mdiShoppingOutline} from '@mdi/js';
+
 
 export default {
   name: 'App',
+
   components: {
+
     HeaderComponente,
 
-  }
-}
-</script>
+  },
 
+  methods:{
+
+    click : function (){
+      console.log("teste")
+    }
+  },
+
+
+
+
+  data: () => ({
+    mdiShoppingOutline,
+    contaitens: 0,
+
+
+  }),
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.borda{
+  border-color: #FF7272;
 }
 </style>

@@ -1,55 +1,97 @@
 <template>
-  <section class="container ">
-    <div class="level">
-      <div class="columns  is-vcentered is-centered">
-        <div class="column is-3 level-left has-text-left">
-          <b-image
-              class="is-size-1"
-              alt="Vue logo"
-              :src="require('@/assets/logo.png')"></b-image>
-        </div>
-      </div>
-      <div class="column is-6 ">
-        <b-field>
-          <b-input placeholder="Busque aqui..." rounded></b-input>
-        </b-field>
-      </div>
-      <div class="column is-3">
-        <svg-icon class="mr-4" type="mdi" :path="mdiShoppingOutline"></svg-icon>
-        <svg-icon cla type="mdi" :path="mdiStarOutline"></svg-icon>
-      </div>
+  <v-app>
+    <v-container
+        fluid
+        elevation="0"
+        height="50"
+        color="null"
+    >
+      <v-row class="d-flex justify-space-between">
+        <v-col  class="text-left">
+          <v-img
+              @click="click()"
+              height="60"
+              position=" left center"
+              contain
+              alt="Vuetify Logo"
+
+
+              src="../assets/logo.png"
+              transition="scale-transition"
+          />
+        </v-col>
+        <v-col>
+          <v-text-field class="borda"
+                        outlined
 
 
 
-    </div>
-    <div class="notification is-primary">
-      teste
-    </div>
-  </section>
+                        label="Busque aqui..."
+                        color="primary"
+                        rounded
+                        dense
+          ></v-text-field>
+
+        </v-col>
+
+
+        <v-col align="right">
+          <v-btn elevation="0" color="white">
+
+            <v-icon>mdi-shopping-outline</v-icon>
+            <span class="text--accent-2 ">{{ contaitens }} Itens</span>
+          </v-btn>
+          <v-btn  elevation="0" color="white" class="ml-2 ba">
+            <v-icon>mdi-star-outline</v-icon>
+            <span class="text--darken-3 ">Favoritos</span>
+
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <v-main>
+      <header-componente></header-componente>
+    </v-main>
+
+  </v-app>
 </template>
 
 <script>
-import SvgIcon from '@jamescoyle/vue-icon';
+
+import HeaderComponente from "@/components/header-componente";
 import {mdiShoppingOutline} from '@mdi/js';
-import {mdiStarOutline} from '@mdi/js';
+
 
 export default {
-  name: "header-componente",
+  name: 'App',
+
   components: {
-    SvgIcon
+
+    HeaderComponente,
+
   },
-  data() {
-    return {
-      mdiShoppingOutline, mdiStarOutline
 
+  methods:{
+
+    click : function (){
+      console.log("teste")
     }
-  }
-}
+  },
 
 
+
+
+  data: () => ({
+    mdiShoppingOutline,
+    contaitens: 0,
+
+
+  }),
+};
 </script>
-
-<style scoped>
-
-
+<style>
+.borda{
+  border-color: #FF7272;
+}
 </style>

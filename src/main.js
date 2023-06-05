@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Buefy from "buefy";
-import 'buefy/dist/buefy.css'
+import vuetify from './plugins/vuetify'
+import SvgIcon from '@jamescoyle/vue-icon';
+
 
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(App),
+  vuetify, SvgIcon,
+  render: h => h(App)
 }).$mount('#app')
-Vue.use(Buefy)
+
+
+
