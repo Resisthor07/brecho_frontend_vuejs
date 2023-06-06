@@ -1,12 +1,8 @@
 <template>
   <v-app>
-
-
-
-
-
     <v-main>
       <header-componente></header-componente>
+      <product-card></product-card>
     </v-main>
 
   </v-app>
@@ -16,13 +12,14 @@
 
 import HeaderComponente from "@/components/header-componente";
 import {mdiShoppingOutline} from '@mdi/js';
+import ProductCard from "@/components/productCard";
 
 
 export default {
   name: 'App',
 
   components: {
-
+    ProductCard,
     HeaderComponente,
 
   },
