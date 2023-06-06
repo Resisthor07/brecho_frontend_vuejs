@@ -16,6 +16,7 @@
 
               src="../assets/logo.png"
               transition="scale-transition"
+              
           />
         </v-col>
         <v-col>
