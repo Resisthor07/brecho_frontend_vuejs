@@ -4,6 +4,9 @@
         color="primary"
         absolute="true"
         >
+
+            <v-spacer></v-spacer>
+        
             <v-list color="primary">
                 <v-list-item>
                     <v-list-item-title class="titulo">Instrucional</v-list-item-title>
@@ -16,7 +19,7 @@
                 </v-list-item>
             </v-list>
 
-
+            <v-spacer></v-spacer>
 
             <v-list color="primary">
                 <v-list-item>
@@ -24,7 +27,7 @@
                 </v-list-item>
             </v-list>
 
-
+            <v-spacer></v-spacer>
 
             <v-list color="primary">
                 <v-list-item>
@@ -38,7 +41,7 @@
                 </v-list-item>
             </v-list>
 
-
+            <v-spacer></v-spacer>
 
             <v-list color="primary">
                 <v-list-item>
@@ -51,8 +54,8 @@
                     <v-list-item-title v-text="item.text" class="lista"></v-list-item-title>
                 </v-list-item>
             </v-list>
-
-          
+        
+            <v-spacer></v-spacer>
 
         </v-footer>
     </v-app>
