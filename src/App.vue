@@ -15,7 +15,7 @@ export default {
   name: 'App',
   components: {
     HeaderComponente,
-    FooterComponente,
+    FooterComponente
   },
   methods:{
     click : function (){
