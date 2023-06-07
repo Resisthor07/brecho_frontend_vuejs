@@ -43,6 +43,7 @@
     </v-container>
 
   </v-app>
+=========
   <v-container fluid elevation="0" height="50">
     <v-row class="d-flex justify-space-between mr-14 ml-14">
       <v-col>
@@ -86,6 +87,7 @@
       </v-btn>
     </v-row>
   </v-container>
+>>>>>>>>> Temporary merge branch 2
 </template>
 
 <script>
