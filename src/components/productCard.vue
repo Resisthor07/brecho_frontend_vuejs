@@ -17,12 +17,12 @@
         <img
             width="100%"
             class="pa-5 mt-4"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            :src="produto.imagem"
         />
       </div>
       <v-card-title
-      >{{ nome }}</v-card-title>
-      <v-card-title>R$ {{ valorAtual }}</v-card-title>
+      >{{ produto.nome }}</v-card-title>
+      <v-card-title>R$ {{ produto.valorAtual }}</v-card-title>
     </v-card>
   </v-container>
 </template>
@@ -34,10 +34,13 @@ export default {
       this.favorite = !this.favorite
     }
   },
-
-  data: () => ({
-    nome: "Calça",
-    valorAtual: " 129.60",
+  props: {
+    produto: Object
+  },
+  mounted(){
+    this.favorite = this.produto.favorite
+  },
+  data:() =>({
     favorite: false
   }),
   computed: {

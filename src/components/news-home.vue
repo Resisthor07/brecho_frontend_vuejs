@@ -1,13 +1,16 @@
 <template>
   <v-container fluid class="d-flex justify-center mb-0">
-<p class="font-weight-bold text-h4 justify-center"
->Novidades</p>
+    <h1 class="text-h4"> {{ titulo }}</h1>
+
+
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "news-home"
+  name: "NewsHome",
+  props:["titulo"],
+
 }
 </script>
 

@@ -1,8 +1,7 @@
 <template>
-    <v-app>
+
         <v-footer
         color="primary"
-        absolute="true"
         padless
         >
 
@@ -65,7 +64,7 @@
 
 
         </v-footer>
-    </v-app>
+
 </template>
 
 <script>
