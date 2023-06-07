@@ -1,9 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <header-componente></header-componente>
-      <product-card></product-card>
-      <login-card></login-card>
+      <LoginCard></LoginCard>
     </v-main>
 
   </v-app>
@@ -11,18 +9,15 @@
 
 <script>
 
-import HeaderComponente from "@/components/header-componente";
-import {mdiShoppingOutline} from '@mdi/js';
-import ProductCard from "@/components/productCard";
+
+//import {mdiShoppingOutline} from '@mdi/js';
 import LoginCard from "./components/loginCard.vue";
+import { mdiShoppingOutline } from '@mdi/js';
 
 
 export default {
   name: 'App',
-
   components: {
-    ProductCard,
-    HeaderComponente,
     LoginCard
 },
 
