@@ -2,28 +2,37 @@
 import { mdiFormTextboxPassword } from '@mdi/js';
 
 <template>
-    <v-container center>
-        <v-form>
-            <v-row>
-                <v-img src="../../img/logo.png" height="100" contain></v-img>
-            </v-row>
-        
+    <v-container fluid>
+       
+        <v-row center>
+            <v-img src="../../img/logo.png" height="100" contain></v-img>
+        </v-row>
+
+        <v-form :key="center">
+
             <v-row :key="center">
                 <v-col
                 cols="12"
                 sm="6"
                 >
                 <v-text-field
+                    
                     v-model="username"
                     label="Login"
+                    
                     outlined
                 ></v-text-field>
                 </v-col>
                 
 
             </v-row>
-            <v-rom :key="center">
+            <v-rom >
+                <v-col 
+                cols="12"
+                sm="6"
+                >
                 <v-text-field
+                
                     v-model="password"
                     :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
                     :rules="[rules.required, rules.min]"
@@ -35,15 +44,15 @@ import { mdiFormTextboxPassword } from '@mdi/js';
                     outlined
                     @click:append="show1 = !show1"
                 ></v-text-field>
-            
+                </v-col>
             
                 <v-btn 
-                
                 class="mr-4"
                 @click="submit"
                 >
                 ENTRAR
                 </v-btn>
+            
             </v-rom>
       
     </v-form>

@@ -4,7 +4,7 @@
       <header-componente></header-componente>
       <product-card></product-card>
       <LoginCard></LoginCard>
-      //<footer-componente></footer-componente>
+      <footer-componente></footer-componente>
     </v-main>
 
   </v-app>
