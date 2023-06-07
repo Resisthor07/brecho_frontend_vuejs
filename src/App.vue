@@ -3,6 +3,7 @@
     <v-main>
       <header-componente></header-componente>
       <product-card></product-card>
+      <footer-componente></footer-componente>
     </v-main>
 
   </v-app>
@@ -14,6 +15,8 @@ import HeaderComponente from "@/components/header-componente";
 import {mdiShoppingOutline} from '@mdi/js';
 import ProductCard from "@/components/productCard";
 
+import FooterComponente from "@/components/footer-componente.vue"
+
 
 export default {
   name: 'App',
@@ -21,7 +24,7 @@ export default {
   components: {
     ProductCard,
     HeaderComponente,
-
+    FooterComponente
   },
 
   methods:{
