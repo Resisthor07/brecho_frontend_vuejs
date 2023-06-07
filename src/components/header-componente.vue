@@ -46,8 +46,7 @@
 </template>
 
 <script>
-
-
+import {mdiShoppingOutline} from '@mdi/js';
 export default {
   name: 'App',
   components: {},
@@ -58,8 +57,23 @@ export default {
   },
 
   data: () => ({
+    mdiShoppingOutline,
     contaitens: 0,
+    menus: [{
+      nome: "calças"
+    },
+      {
+        nome: "Blusas"
+      },
+      {
+        nome: "Camisas"
+      },
+      {
+        nome: "Blazers"
+      },
+      {nome: "Acessórios"}
 
+    ]
   }),
 };
 </script>
