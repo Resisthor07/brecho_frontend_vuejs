@@ -5,7 +5,7 @@ import { mdiFormTextboxPassword } from '@mdi/js';
     <v-container fluid>
        
         <v-row center>
-            <v-img src="../../img/logo.png" height="100" contain></v-img>
+            <v-img src="../assets/logo.png" height="100" contain></v-img>
         </v-row>
 
         <v-form :key="center">
