@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid elevation="0" height="50">
-    <v-row class="d-flex justify-space-between mr-14 ml-14">
+  <v-container fluid  height="50">
+    <v-row class="d-flex justify-space-between mr-14 ml-14 align-center ">
       <v-col>
         <v-img
             @click="click()"
@@ -19,6 +19,7 @@
                       color="primary"
                       rounded
                       dense
+                      hide-details="true"
         ></v-text-field>
       </v-col>
       <v-col align="right">
@@ -32,15 +33,20 @@
         </v-btn>
       </v-col>
     </v-row>
+
+
+
     <v-row
-        class="d-flex justify-space-around mr-16 ml-16">
+        class="d-flex justify-space-around backgroundMenu">
       <v-btn
+          elevation="0"
           v-for="item in menus"
           :key="item.nome"
           width="20%"  height="45" color="primary t">
         {{ item.nome }}
       </v-btn>
     </v-row>
+
   </v-container>
 </template>
 
@@ -57,7 +63,7 @@ export default {
 
   data: () => ({
     mdiShoppingOutline,
-    contaitens: 0,
+    contaitens: 12,
     menus: [{
       nome: "calças"
     },
@@ -79,5 +85,8 @@ export default {
 <style>
 .borda {
   border-color: #FF7272;
+}
+.backgroundMenu{
+  background-color: #FF7272;
 }
 </style>

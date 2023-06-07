@@ -2,7 +2,11 @@
   <v-app>
     <v-main>
       <header-componente></header-componente>
-      <product-card></product-card>
+      <banner-img></banner-img>
+      <news-home></news-home>
+      <scroll-home></scroll-home>
+      <banner-img></banner-img>
+      <scroll-home></scroll-home>
     </v-main>
 
   </v-app>
@@ -12,14 +16,20 @@
 
 import HeaderComponente from "@/components/header-componente";
 import {mdiShoppingOutline} from '@mdi/js';
-import ProductCard from "@/components/productCard";
+
+import ScrollHome from "@/components/ScrollHome";
+import BannerImg from "@/components/banner-img";
+import NewsHome from "@/components/news-home";
 
 
 export default {
   name: 'App',
 
   components: {
-    ProductCard,
+    NewsHome,
+    BannerImg,
+    ScrollHome,
+
     HeaderComponente,
 
   },
