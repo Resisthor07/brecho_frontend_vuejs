@@ -2,23 +2,23 @@
     <v-app>
         <header-componente></header-componente>
         <v-main>
-            <v-conteiner class="principal">
+            <v-conteiner class="principal_desejo">
                 <v-row>
                     <v-col>
                         <v-icon size="40" color="#ff1617">mdi-star</v-icon>
-                        <span>Lista de desejos</span>
+                        <span class="titulo_desejo">Lista de desejos</span>
                     </v-col>
                 </v-row>
                 <v-row>
                     <v-col>
-                        <span v-if="quantidade != 0">{{ quantidade }} items adicionado(s) em sua lista</span>
+                        <span class="descricao_desejo" v-if="quantidade != 0">{{ quantidade }} items adicionado(s) em sua lista</span>
                     </v-col>
                 </v-row>
                 
                 <v-row>
                     <v-col>
                         <scroll-home v-if="!vazio" :produtos="produtos"></scroll-home>
-                        <h1 v-if="vazio">Sua lista de desejos está vazia</h1>
+                        <h1 class="aviso_desejo" v-if="vazio">Sua lista de desejos está vazia</h1>
                     </v-col>
                 </v-row>
             </v-conteiner>
@@ -79,7 +79,7 @@ import ScrollHome from "@/components/ScrollHome";
 
     @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
-    .principal
+    .principal_desejo
     {
         display: flex;
         flex-direction: column;
@@ -88,7 +88,7 @@ import ScrollHome from "@/components/ScrollHome";
         margin-top: 30px;
     }
 
-    .titulo
+    .titulo_desejo
     {
         font-family: "Dongle";
         font-style: normal;
@@ -97,7 +97,7 @@ import ScrollHome from "@/components/ScrollHome";
         color: #313131;
     }
 
-    .descricao
+    .descricao_desejo
     {
         font-family: "Dongle";
         font-style: normal;
@@ -106,7 +106,7 @@ import ScrollHome from "@/components/ScrollHome";
         color: #313131;
     }
 
-    .aviso
+    .aviso_desejo
     {
         font-family: "Dongle";
         font-style: normal;
