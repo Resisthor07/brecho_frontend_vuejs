@@ -2,6 +2,7 @@
 
         <v-footer
         color="primary"
+        absolute="true"
         padless
         >
             <div class="parte_de_cima">
