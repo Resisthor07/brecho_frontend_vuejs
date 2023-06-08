@@ -4,7 +4,6 @@
         color="primary"
         padless
         >
-
             <div class="parte_de_cima">
                 <v-spacer></v-spacer>
             
