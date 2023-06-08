@@ -77,6 +77,8 @@ import ScrollHome from "@/components/ScrollHome";
 
 <style>
 
+    @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
     .principal
     {
         display: flex;
@@ -88,17 +90,29 @@ import ScrollHome from "@/components/ScrollHome";
 
     .titulo
     {
-
+        font-family: "Dongle";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        color: #313131;
     }
 
     .descricao
     {
-
+        font-family: "Dongle";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 30px;
+        color: #313131;
     }
 
     .aviso
     {
-
+        font-family: "Dongle";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 80px;
+        color: #313131;
     }
 
 </style>
