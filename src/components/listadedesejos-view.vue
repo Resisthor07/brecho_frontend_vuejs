@@ -1,11 +1,29 @@
 <template>
     <v-app>
+        <header-componente></header-componente>
         <v-main>
-            <header-componente></header-componente>
-            <scroll-home v-if="!vazio" :produtos="produtos"></scroll-home>
-            <h1 v-if="vazio">Sua lista de desejos está vazia</h1>
-            <footer-componente></footer-componente>
+            <v-conteiner class="principal">
+                <v-row>
+                    <v-col>
+                        <v-icon size="40" color="#ff1617">mdi-star</v-icon>
+                        <span>Lista de desejos</span>
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col>
+                        <span v-if="quantidade != 0">{{ quantidade }} items adicionado(s) em sua lista</span>
+                    </v-col>
+                </v-row>
+                
+                <v-row>
+                    <v-col>
+                        <scroll-home v-if="!vazio" :produtos="produtos"></scroll-home>
+                        <h1 v-if="vazio">Sua lista de desejos está vazia</h1>
+                    </v-col>
+                </v-row>
+            </v-conteiner>
         </v-main>
+        <footer-componente></footer-componente>
     </v-app>
     
 </template>
@@ -58,5 +76,29 @@ import ScrollHome from "@/components/ScrollHome";
 </script>
 
 <style>
+
+    .principal
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 70px;
+        margin-top: 30px;
+    }
+
+    .titulo
+    {
+
+    }
+
+    .descricao
+    {
+
+    }
+
+    .aviso
+    {
+
+    }
 
 </style>
