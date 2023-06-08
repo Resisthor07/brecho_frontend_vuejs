@@ -26,6 +26,11 @@
                     <v-list-item>
                         <v-list-item-title class="titulo">Pagamentos</v-list-item-title>
                     </v-list-item>
+                    <v-img src="../assets/pagamento.png"
+                    max-width="275px"
+                    width="28vw">
+                    </v-img>
+
                 </v-list>
 
                 <v-spacer></v-spacer>
@@ -38,7 +43,13 @@
                     <v-list-item
                     v-for="item in contato"
                     :key="item">
-                        <v-list-item-title v-text="item.text" class="lista"></v-list-item-title>
+                        <!--<v-list-item-icon>-->
+                            <v-icon v-text="item.icon" color="#FFFFFF" size="26"
+                            ></v-icon>
+                        <!--</v-list-item-icon>-->
+                        <!--<v-list-item-content>-->
+                            <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
+                        <!--</v-list-item-content>-->
                     </v-list-item>
                 </v-list>
 
@@ -69,9 +80,17 @@
 
 <script>
 
+
+    import { mdiWhatsapp } from '@mdi/js';
+    import { mdiPhone } from '@mdi/js';
+    import { mdiEmail } from '@mdi/js';
+
     export default {
         name: 'FooterComponente',
         data: () => ({
+            mdiWhatsapp,
+            mdiPhone,
+            mdiEmail,
             instrucional: [
                 "Sobre-nós",
                 "Como comprar?",
@@ -79,13 +98,16 @@
             ],
             contato: [
                 {
-                    text: "(45) 9999-9999"
+                    text: "(45) 9999-9999",
+                    icon: "mdi-whatsapp"
                 },
                 {
-                    text: "(45) 9999-9999"
+                    text: "(45) 9999-9999",
+                    icon: "mdi-phone"
                 },
                 {
-                    text: "fulana@flordafronteira.com"
+                    text: "fulana@flordafronteira.com",
+                    icon: "mdi-email"
                 }
             ],
             redes: [
@@ -144,6 +166,11 @@
     .paragrafo
     {
         margin: 15px;
+    }
+
+    .icone_texto
+    {
+        margin-left: 13px;
     }
 
     
