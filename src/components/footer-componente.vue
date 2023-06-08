@@ -4,18 +4,18 @@
         color="primary"
         padless
         >
-            <div class="parte_de_cima">
+            <div class="parte_de_cima_footer">
                 <v-spacer></v-spacer>
             
                 <v-list color="primary">
                     <v-list-item>
-                        <v-list-item-title class="titulo">Instrucional</v-list-item-title>
+                        <v-list-item-title class="titulo_footer">Instrucional</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item
                     v-for="item in instrucional"
                     :key="item">
-                        <v-list-item-title v-text="item" class="lista"></v-list-item-title>
+                        <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
                     </v-list-item>
                 </v-list>
 
@@ -23,7 +23,7 @@
 
                 <v-list color="primary">
                     <v-list-item>
-                        <v-list-item-title class="titulo">Pagamentos</v-list-item-title>
+                        <v-list-item-title class="titulo_footer">Pagamentos</v-list-item-title>
                     </v-list-item>
                     <v-img src="../assets/pagamento.png"
                     max-width="275px"
@@ -36,7 +36,7 @@
 
                 <v-list color="primary">
                     <v-list-item>
-                        <v-list-item-title class="titulo">Contato</v-list-item-title>
+                        <v-list-item-title class="titulo_footer">Contato</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item
@@ -45,7 +45,7 @@
                         
                         <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
                         
-                        <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
+                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
                         
                     </v-list-item>
                 </v-list>
@@ -54,7 +54,7 @@
 
                 <v-list color="primary">
                     <v-list-item>
-                        <v-list-item-title class="titulo">Redes Sociais</v-list-item-title>
+                        <v-list-item-title class="titulo_footer">Redes Sociais</v-list-item-title>
                     </v-list-item>
 
                     <v-list-item
@@ -62,15 +62,15 @@
                     :key="item">
                         <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
                         
-                        <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
+                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
                         
                     </v-list-item>
                 </v-list>
             
                 <v-spacer></v-spacer>
             </div>
-            <div class="parte_de_baixo">
-                <p class="lista paragrafo">2023 todos os direitos reservados - Desenvolvido por G7</p>
+            <div class="parte_de_baixo_footer">
+                <p class="lista_footer paragrafo_footer">2023 todos os direitos reservados - Desenvolvido por G7</p>
             </div>
 
 
@@ -134,7 +134,7 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
-    .titulo
+    .titulo_footer
     {
         color: #FFFFFF;
         font-family: "Dongle";
@@ -143,7 +143,7 @@
         font-weight: 400;
     }
 
-    .lista
+    .lista_footer
     {
         color: #FFFFFF;
         font-family: "Dongle";
@@ -152,7 +152,7 @@
         font-weight: 300;
     }
 
-    .parte_de_cima
+    .parte_de_cima_footer
     {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -160,7 +160,7 @@
         width: 100%;
     }
 
-    .parte_de_baixo
+    .parte_de_baixo_footer
     {   
         width: 100%;
         display: flex;
@@ -169,12 +169,12 @@
         border-top: 4px solid #FFFFFF ;
     }
 
-    .paragrafo
+    .paragrafo_footer
     {
         margin: 15px;
     }
 
-    .icone_texto
+    .icone_texto_footer
     {
         margin-left: 13px;
     }
