@@ -43,13 +43,11 @@
                     <v-list-item
                     v-for="item in contato"
                     :key="item">
-                        <!--<v-list-item-icon>-->
-                            <v-icon v-text="item.icon" color="#FFFFFF" size="26"
-                            ></v-icon>
-                        <!--</v-list-item-icon>-->
-                        <!--<v-list-item-content>-->
-                            <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
-                        <!--</v-list-item-content>-->
+                        
+                        <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
+                        
+                        <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
+                        
                     </v-list-item>
                 </v-list>
 
@@ -63,7 +61,10 @@
                     <v-list-item
                     v-for="item in redes"
                     :key="item">
-                        <v-list-item-title v-text="item.text" class="lista"></v-list-item-title>
+                        <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
+                        
+                        <v-list-item-title v-text="item.text" class="lista icone_texto"></v-list-item-title>
+                        
                     </v-list-item>
                 </v-list>
             
@@ -84,6 +85,8 @@
     import { mdiWhatsapp } from '@mdi/js';
     import { mdiPhone } from '@mdi/js';
     import { mdiEmail } from '@mdi/js';
+    import { mdiFacebook } from '@mdi/js';
+    import { mdiInstagram } from '@mdi/js';
 
     export default {
         name: 'FooterComponente',
@@ -91,6 +94,8 @@
             mdiWhatsapp,
             mdiPhone,
             mdiEmail,
+            mdiFacebook,
+            mdiInstagram,
             instrucional: [
                 "Sobre-nós",
                 "Como comprar?",
@@ -112,10 +117,12 @@
             ],
             redes: [
                 {
-                    text: "@flordafronteira"
+                    text: "@flordafronteira",
+                    icon: "mdi-facebook"
                 },
                 {
-                    text: "@flordafronteira"
+                    text: "@flordafronteira",
+                    icon: "mdi-instagram"
                 }
             ]
         })
