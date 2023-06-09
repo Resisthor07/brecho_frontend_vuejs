@@ -4,19 +4,19 @@
         <v-main>
             <v-conteiner class="principal_desejo">
                 <v-row>
-                    <v-col>
+                    <v-col class="col_desejo titulo_poscionamento_desejo">
                         <v-icon size="40" color="#ff1617">mdi-star</v-icon>
                         <span class="titulo_desejo">Lista de desejos</span>
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col>
+                    <v-col class="col_desejo">
                         <span class="descricao_desejo" v-if="quantidade != 0">{{ quantidade }} items adicionado(s) em sua lista</span>
                     </v-col>
                 </v-row>
                 
                 <v-row>
-                    <v-col>
+                    <v-col class="col_desejo">
                         <scroll-home v-if="!vazio" :produtos="produtos"></scroll-home>
                         <h1 class="aviso_desejo" v-if="vazio">Sua lista de desejos está vazia</h1>
                     </v-col>
@@ -49,7 +49,7 @@ import ScrollHome from "@/components/ScrollHome";
         }),
         methods: {
             adicionaProdutos(){
-                for(let i=0;i<0;i++)
+                for(let i=0;i<5;i++)
                 {
                     this.produtos.push({
                         nome: "Calça",
@@ -88,6 +88,13 @@ import ScrollHome from "@/components/ScrollHome";
         margin-top: 30px;
     }
 
+    .titulo_poscionamento_desejo
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .titulo_desejo
     {
         font-family: "Dongle";
@@ -95,6 +102,8 @@ import ScrollHome from "@/components/ScrollHome";
         font-weight: 400;
         font-size: 40px;
         color: #313131;
+        margin-top: 8px;
+        margin-left: 8px;
     }
 
     .descricao_desejo
@@ -104,6 +113,8 @@ import ScrollHome from "@/components/ScrollHome";
         font-weight: 300;
         font-size: 30px;
         color: #313131;
+        margin: 0px;
+        padding: 0px;
     }
 
     .aviso_desejo
@@ -113,6 +124,12 @@ import ScrollHome from "@/components/ScrollHome";
         font-weight: 500;
         font-size: 80px;
         color: #313131;
+    }
+
+    .col_desejo
+    {
+        margin: 0px;
+        padding: 0px;
     }
 
 </style>
