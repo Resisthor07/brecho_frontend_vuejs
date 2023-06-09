@@ -69,7 +69,7 @@ import ScrollHome from "@/components/ScrollHome";
                 }
             }
         },
-        created: function(){
+        mounted: function(){
             this.adicionaProdutos();
         }
     }
