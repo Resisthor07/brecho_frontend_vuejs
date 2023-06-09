@@ -51,11 +51,13 @@
 
     .texto_buscac
     {
+        margin-top: 20px;
         margin-left: 60px;
         font-family: "Dongle";
         font-size: 30px;
         font-weight: 400;
         font-style: normal;
+        color: #313131;
     }
 
     .aviso_buscac
@@ -63,7 +65,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         font-family: "Dongle";
         font-style: normal;
         font-weight: 500;
