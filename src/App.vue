@@ -9,6 +9,7 @@
       <scroll-home></scroll-home>
       <banner-img></banner-img>
       <scroll-home></scroll-home>
+      <products-detail></products-detail>
       <footer-componente></footer-componente>
     </v-main>
 
@@ -24,8 +25,8 @@ import ScrollHome from "@/components/ScrollHome";
 import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
 
-import FooterComponente from "@/components/footer-componente.vue"
-
+import FooterComponente from "@/components/footer-componente.vue";
+import ProductsDetail from "@/components/products-detail.vue";
 
 export default {
   name: 'App',
@@ -34,6 +35,7 @@ export default {
     NewsHome,
     BannerImg,
     ScrollHome,
+    ProductsDetail,
 
     HeaderComponente,
     FooterComponente
