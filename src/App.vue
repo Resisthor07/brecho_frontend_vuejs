@@ -124,6 +124,16 @@ export default {
     background-color: #FF7272;
   }
   
+  .c313{
+    color: #313131;
+  }
+  .cfff{
+    color: #ffff;
+  }
+
+  .borda-padrao{
+    border: 1px solid #0000;
+  }
 
   .borda {
     border-color: #FF7272;
