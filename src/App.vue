@@ -60,54 +60,34 @@ export default {
 
 <style>
   @font-face {
-    font-family: 'Poppins Bold';
-    src: url(./fonts/Poppins-Bold.ttf) format('ttf');
+    font-family: 'Dongle Bold';
+    src: url(./fonts/Dongle-Bold.woff) format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
-    font-family: 'Poppins Light';
-    src: url(./fonts/Poppins-Light.ttf) format('ttf');
+    font-family: 'Dongle Light';
+    src: url(./fonts/Dongle-Light.woff) format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
-    font-family: 'Poppins Medium';
-    src: url(./fonts/Poppins-Medium.ttf) format('ttf');
+    font-family: 'Dongle Regular';
+    src: url(./fonts/Dongle-Regular.woff) format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
-  @font-face {
-    font-family: 'Poppins Regular';
-    src: url(./fonts/Poppins-Regular.ttf) format('ttf');
-    font-weight: normal;
-    font-style: normal;
+  .dongle-bold{
+    font-family: 'Dongle Bold';
   }
-
-  @font-face {
-    font-family: 'Poppins SemiBold';
-    src: url(./fonts/Poppins-SemiBold.ttf) format('ttf');
-    font-weight: normal;
-    font-style: normal;
+  .dongle-light{
+    font-family: 'Dongle Light';
   }
-
-  .poppins-bold{
-    font-family: 'Poppins Bold';
-  }
-  .poppins-light{
-    font-family: 'Poppins Light';
-  }
-  .poppins-medium{
-    font-family: 'Poppins Medium';
-  }
-  .poppins-regular{
-    font-family: 'Poppins Regular';
-  }
-  .poppins-semibold{
-    font-family: 'Poppins SemiBold';
+  .dongle-regular{
+    font-family: 'Dongle Regular';
   }
 
   .f12{font-size: 0.75rem;}
@@ -139,6 +119,11 @@ export default {
   .f38{font-size: 2.375rem;}
   .f38{font-size: 2.438rem;}
   .f40{font-size: 2.5rem;}
+
+  .bg-ff7{
+    background-color: #FF7272;
+  }
+  
 
   .borda {
     border-color: #FF7272;
