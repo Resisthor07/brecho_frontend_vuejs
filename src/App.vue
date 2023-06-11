@@ -4,12 +4,12 @@
       <header-componente></header-componente>
       <product-card></product-card>
 
+      <products-detail></products-detail>
       <banner-img></banner-img>
       <news-home></news-home>
       <scroll-home></scroll-home>
       <banner-img></banner-img>
       <scroll-home></scroll-home>
-      <products-detail></products-detail>
       <footer-componente></footer-componente>
     </v-main>
 

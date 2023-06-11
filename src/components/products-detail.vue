@@ -3,6 +3,7 @@
         <header-componente></header-componente>
         <v-main>
             <p>Detalhes do produto</p>
+            <p>ksdmgdsklgmslkfmgmfg</p>
         </v-main>
         <footer-componente></footer-componente>
     </v-app>
@@ -19,7 +20,7 @@ export default {
         FooterComponente
     },
     data: ()=>({
-        
+
     })
 }
 </script>
