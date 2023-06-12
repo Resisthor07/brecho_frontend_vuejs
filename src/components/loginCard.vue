@@ -18,23 +18,22 @@ import { mdiFormTextboxPassword } from '@mdi/js';
         
             v-model="username"
             label="Login"
-            
             outlined
         ></v-text-field>
         </v-col>
       </v-row>     
 
-      
-      <v-row justify="center" justify-content="center">
+      <v-row justify="center" justify-content="center" flex-direction="column" >
+  
         <v-col 
-       
+        padding="0px"        
         class="text-center"        
         cols="12"
         sm="4"
         
         >
-        <v-text-field 
-
+        <v-text-field
+       
             v-model="password"
             :rules="[rules.required, rules.min]"
             :type="show1 ? 'text' : 'password'"
@@ -45,8 +44,12 @@ import { mdiFormTextboxPassword } from '@mdi/js';
             @click:append="show1 = !show1"
         ></v-text-field>
         </v-col>
+        <div  >
+          <p>Esqueceu a Senha</p>
+        </div>
       </v-row>
-
+    
+     
       <v-row justify="center" justify-content="center">
         <v-btn 
           
