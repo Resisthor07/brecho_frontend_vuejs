@@ -3,67 +3,69 @@ import { mdiFormTextboxPassword } from '@mdi/js';
 
 <template>
 
-    <v-container fluid>
-       
-        
+    <v-container>
+
+      <v-row flex-direction="column" >
+
         <v-img src="../assets/logo.png" height="200" contain></v-img>
-      
+        
 
-      <v-row justify="center" justify-content="center">
+        
         <v-col
-        cols="12"
-        sm="4"
-        >
-        <v-text-field
-        
-            v-model="username"
-            label="Login"
-            outlined
-        ></v-text-field>
-        </v-col>
-      </v-row>     
-
-      <v-row justify="center" justify-content="center" flex-direction="column" >
-  
-        <v-col 
-        padding="0px"        
-        class="text-center"        
-        cols="12"
-        sm="4"
-        
-        >
-        <v-text-field
-       
-            v-model="password"
-            :rules="[rules.required, rules.min]"
-            :type="show1 ? 'text' : 'password'"
-            name="input-10-1"
-            label="Senha"
-            hint="At least 8 characters"
-            outlined
-            @click:append="show1 = !show1"
-        ></v-text-field>
-        </v-col>
-        <div  >
-          <p>Esqueceu a Senha</p>
-        </div>
-      </v-row>
-    
-     
-      <v-row justify="center" justify-content="center">
-        <v-btn 
+         
+          cols="12"
+          sm="4"
+          >
           
-          color="#FE7271"
-          justify="center" justify-content="center"
-          class="mr-4"
-          @click="submit">
-              ENTRAR
-              </v-btn>
+          <v-text-field
+            background-color="rgba(217, 217, 217, 0.51)"
+            border-color="rgba(255, 114, 114)"
+            text-field-outlined-fieldset-border="2px solid "
+              class="custom-input"
+              v-model="username"
+              label="Login"
+              outlined
+          > outlined</v-text-field>
+        </v-col>
+          
+
+        
+          <v-col 
+            cols="12"
+            sm="4">
+              <v-text-field
+                background-color="rgba(217, 217, 217, 0.51)"
+                v-model="password"
+                :rules="[rules.required, rules.min]"
+                :type="show1 ? 'text' : 'password'"
+                name="input-10-1"
+                label="Senha"
+                hint="At least 8 characters"
+                outlined
+                @click:append="show1 = !show1"
+                  
+              ></v-text-field>
+
+                <p>Esqueceu a senha</p>
+            
+          </v-col >
+
+          <v-btn 
+            justify="center"
+            align-items="center"
+            color="#FE7271"
+            class="mr-4"
+            @click="submit">
+                ENTRAR
+          </v-btn>
+       
+
       </v-row>
         
    
-
+      
     </v-container>
+
 </template>
 
 <script>
@@ -82,3 +84,12 @@ export default {
   },
 };
 </script>
+
+<style>
+.row{
+  flex-direction: column;
+  align-items: center;
+}
+
+
+</style>

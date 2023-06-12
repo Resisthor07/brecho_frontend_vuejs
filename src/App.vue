@@ -18,6 +18,7 @@ import { mdiShoppingOutline } from '@mdi/js';
 import ScrollHome from "@/components/ScrollHome";
 import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
+import loginCard from "./components/loginCard.vue";
 
 import FooterComponente from "@/components/footer-componente.vue";
 import ProductsDetail from "@/components/products-detail.vue";
@@ -29,7 +30,7 @@ export default {
     BannerImg,
     ScrollHome,
     ProductsDetail,
-
+    loginCard,
     HeaderComponente,
     FooterComponente
   },
