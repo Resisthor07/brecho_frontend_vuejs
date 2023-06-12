@@ -9,6 +9,7 @@
       <scroll-home></scroll-home>
       <banner-img></banner-img>
       <scroll-home></scroll-home>
+      <tabela-dados></tabela-dados>
       <footer-componente></footer-componente>
     </v-main>
 
@@ -25,12 +26,14 @@ import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
 
 import FooterComponente from "@/components/footer-componente.vue"
+import TabelaDados from "@/components/tabela-dados";
 
 
 export default {
   name: 'App',
 
   components: {
+    TabelaDados,
     NewsHome,
     BannerImg,
     ScrollHome,
