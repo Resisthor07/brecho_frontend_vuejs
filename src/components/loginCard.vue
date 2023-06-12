@@ -32,7 +32,8 @@ import { mdiFormTextboxPassword } from '@mdi/js';
         
           <v-col 
             cols="12"
-            sm="4">
+            sm="4"
+            justify-content="flex-end" >
               <v-text-field
                 background-color="rgba(217, 217, 217, 0.51)"
                 v-model="password"
@@ -40,13 +41,15 @@ import { mdiFormTextboxPassword } from '@mdi/js';
                 :type="show1 ? 'text' : 'password'"
                 name="input-10-1"
                 label="Senha"
-                hint="At least 8 characters"
+                hint="Favor inserir 8 caracteres"
                 outlined
                 @click:append="show1 = !show1"
                   
               ></v-text-field>
 
+              <div>
                 <p>Esqueceu a senha</p>
+              </div>
             
           </v-col >
 
@@ -89,6 +92,10 @@ export default {
 .row{
   flex-direction: column;
   align-items: center;
+}
+
+.v-text-field--outlined fieldset{
+  border: 2px solid rgba(255, 114, 114);
 }
 
 
