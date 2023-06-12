@@ -1,85 +1,62 @@
 <template>
-  <v-container fluid class="pl-10 pr-10">
+  <v-container fluid elevation="0">
     <v-card
-        clas
         :loading="loading"
-        class="mx-10 my-10"
+        class="ma-0  "
         max-width="280"
+        elevation="0"
+        outlined
     >
-      <template slot="progress">
-        <v-progress-linear
-            color="deep-purple"
-            height="10"
-            indeterminate
-        ></v-progress-linear>
-      </template>
-
       <div class="containeIimg">
         <v-icon class="favoriteIcon"
                 :color="corIcone"
                 size="30"
                 @click="mudaCorIcone()"
-        >{{iconeFavorito}}
+        >{{ iconeFavorito }}
         </v-icon>
         <img
             width="100%"
             class="pa-5 mt-4"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            :src="produto.imagem"
         />
       </div>
-
-      <v-card-title>{{ nome }}</v-card-title>
-
-      <v-card-text>
-        <v-row
-            align="center"
-            class="mx-0"
-        >
-        </v-row>
-
-      </v-card-text>
-
-      <v-divider class="mx-4"></v-divider>
-
-      <v-card-title>R$ {{ valorAtual }}</v-card-title>
-
-
+      <v-card-title
+      >{{ produto.nome }}</v-card-title>
+      <v-card-title>R$ {{ produto.valorAtual }}</v-card-title>
     </v-card>
   </v-container>
 </template>
 <script>
 export default {
   name: "productCard",
-  methods:{
-    mudaCorIcone: function (){
-      this.favorite = ! this.favorite
-    }},
-
-
-  data: () => ({
-    nome: "Calça",
-    valorAtual: " 129.60",
+  methods: {
+    mudaCorIcone: function () {
+      this.favorite = !this.favorite
+    }
+  },
+  props: {
+    produto: Object
+  },
+  mounted(){
+    this.favorite = this.produto.favorite
+  },
+  data:() =>({
     favorite: false
   }),
-computed: {
-    corIcone: function (){
-      if(this.favorite === true){
+  computed: {
+    corIcone: function () {
+      if (this.favorite === true) {
         return 'yellow darken-3'
       }
       return "black"
     },
-    iconeFavorito: function (){
-      if(this.favorite=== true){
+    iconeFavorito: function () {
+      if (this.favorite === true) {
         return "mdi-star"
       }
       return "mdi-star-outline"
     }
   }
-
-
-
-
-
 
 
 };
@@ -88,11 +65,14 @@ computed: {
 .containeIimg {
   position: relative;
 }
+
 .favoriteIcon {
 
   position: absolute;
   right: 3%;
   top: 3%;
 }
-
+.bordaCard{
+  border-inline: 5px;
+}
 </style>
