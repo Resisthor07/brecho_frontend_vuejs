@@ -71,7 +71,7 @@
         class="mb-5"
         cols="12"
       >
-        <h2 class="headline font-weight-bold mb-3">
+        <h2 :style="cores" class="headline font-weight-bold mb-3">
           Ecosystem
         </h2>
 
@@ -146,6 +146,9 @@
           href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
         },
       ],
+      cores: {
+        color: "#FFFF",
+      }
     }),
   }
 </script>

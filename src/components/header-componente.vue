@@ -1,53 +1,102 @@
 <template>
-  <v-container fluid  height="50">
-    <v-row class="d-flex justify-space-between mr-14 ml-14 align-center ">
-      <v-col>
-        <v-img
-            @click="click()"
-            height="60"
-            position=" left center"
-            contain
-            alt="Brechó Logo"
-            src="../assets/logo.png"
-            transition="scale-transition"
-        />
-      </v-col>
-      <v-col>
-        <v-text-field class="borda"
-                      outlined
-                      label="Busque aqui..."
-                      color="primary"
-                      rounded
-                      dense
-                      hide-details="true"
-        ></v-text-field>
-      </v-col>
-      <v-col align="right">
-        <v-btn elevation="0" color="white">
-          <v-icon>mdi-shopping-outline</v-icon>
-          <span class="text--accent-2 ">{{ contaitens }} Itens</span>
-        </v-btn>
-        <v-btn elevation="0" color="white" class="ml-2 ba">
-          <v-icon>mdi-star-outline</v-icon>
-          <span class="text--darken-3 ">Favoritos</span>
-        </v-btn>
-      </v-col>
-    </v-row>
-
-
-
-    <v-row
-        class="d-flex justify-space-around backgroundMenu">
-      <v-btn
+  <div>
+    <v-app>
+      <v-container
+          fluid
           elevation="0"
-          v-for="item in menus"
-          :key="item.nome"
-          width="20%"  height="45" color="primary t">
-        {{ item.nome }}
-      </v-btn>
-    </v-row>
+          height="50"
+          color="null"
+      >
+        <v-row class="d-flex justify-space-between">
+          <v-col class="text-left">
+            <v-img
+                @click="click()"
+                height="60"
+                position=" left center"
+                contain
 
-  </v-container>
+                src="../assets/logo.png"
+                transition="scale-transition"
+                
+            />
+          </v-col>
+          <v-col>
+            <v-text-field class="borda"
+                          outlined
+                          label="Busque aqui..."
+                          color="primary"
+                          rounded
+                          dense
+            ></v-text-field>
+          </v-col>
+          <v-col align="right">
+            <v-btn elevation="0" color="white">
+
+              <v-icon>mdi-shopping-outline</v-icon>
+              <span class="text--accent-2 ">{{ contaitens }} Itens</span>
+            </v-btn>
+            <v-btn elevation="0" color="white" class="ml-2 ba">
+              <v-icon>mdi-star-outline</v-icon>
+              <span class="text--darken-3 ">Favoritos</span>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
+
+    </v-app>
+  
+
+    <v-container fluid elevation="0" height="50">
+      <v-row class="d-flex justify-space-between mr-14 ml-14">
+        <v-col>
+          <v-img
+              @click="click()"
+              height="60"
+              position=" left center"
+              contain
+              alt="Brechó Logo"
+              src="../assets/logo.png"
+              transition="scale-transition"
+          />
+        </v-col>
+        <v-col>
+          <v-text-field class="borda"
+                        outlined
+                        label="Busque aqui..."
+                        color="primary"
+                        rounded
+                        dense
+                        hide-details="true"
+          ></v-text-field>
+        </v-col>
+        <v-col align="right">
+          <v-btn elevation="0" color="white">
+            <v-icon>mdi-shopping-outline</v-icon>
+            <span class="text--accent-2 ">{{ contaitens }} Itens</span>
+          </v-btn>
+          <v-btn elevation="0" color="white" class="ml-2 ba">
+            <v-icon>mdi-star-outline</v-icon>
+            <span class="text--darken-3 ">Favoritos</span>
+          </v-btn>
+        </v-col>
+      </v-row>
+
+
+
+      <v-row
+          class="d-flex justify-space-around backgroundMenu">
+        <v-btn
+            elevation="0"
+            v-for="item in menus"
+            :key="item.nome"
+            width="20%"  height="45" color="primary t">
+          {{ item.nome }}
+        </v-btn>
+      </v-row>
+
+    </v-container>
+  </div>
+
 </template>
 
 <script>
