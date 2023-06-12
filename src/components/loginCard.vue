@@ -19,6 +19,7 @@ import { mdiFormTextboxPassword } from '@mdi/js';
           
           <v-text-field
             background-color="rgba(217, 217, 217, 0.51)"
+            font-family="Dongle Regular"
             border-color="rgba(255, 114, 114)"
             text-field-outlined-fieldset-border="2px solid "
               class="custom-input"
@@ -35,6 +36,7 @@ import { mdiFormTextboxPassword } from '@mdi/js';
             sm="4"
             justify-content="flex-end" >
               <v-text-field
+                font-family="Dongle Regular"
                 background-color="rgba(217, 217, 217, 0.51)"
                 v-model="password"
                 :rules="[rules.required, rules.min]"
@@ -47,16 +49,17 @@ import { mdiFormTextboxPassword } from '@mdi/js';
                   
               ></v-text-field>
 
-              <div>
+              <v-rom align-items="flex-end" >
                 <p>Esqueceu a senha</p>
-              </div>
+              </v-rom>
             
           </v-col >
 
           <v-btn 
+            color="rgba(254, 114, 113)"
+            font-family="Dongle Regular"
             justify="center"
             align-items="center"
-            color="#FE7271"
             class="mr-4"
             @click="submit">
                 ENTRAR
@@ -92,10 +95,17 @@ export default {
 .row{
   flex-direction: column;
   align-items: center;
+  
 }
 
 .v-text-field--outlined fieldset{
   border: 2px solid rgba(255, 114, 114);
+}
+
+p{
+  display: flex;
+  color: rgb(19, 3, 250);
+  justify-content:flex-end
 }
 
 
