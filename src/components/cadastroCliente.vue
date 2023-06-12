@@ -158,7 +158,6 @@ export default {
     myImputModel: '',
     imputCEP: '',
     alerta:false,
-
     resposta:'',
     bairro: '',
     erros:[],
