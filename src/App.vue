@@ -12,23 +12,12 @@
 
 <script>
 
-<<<<<<< HEAD
-
-//import {mdiShoppingOutline} from '@mdi/js';
-import LoginCard from "./components/loginCard.vue";
-//import footerComponente from "@/components/footer-componente.vue";
-
-import { mdiShoppingOutline } from '@mdi/js';
-
-//import FooterComponente from "@/components/footer-componente.vue"
-=======
 import HeaderComponente from "@/components/header-componente";
 import { mdiShoppingOutline } from '@mdi/js';
 
 import ScrollHome from "@/components/ScrollHome";
 import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
->>>>>>> b35cead94150328fb1e473808f0ff82d1a52d2ee
 
 import FooterComponente from "@/components/footer-componente.vue";
 import ProductsDetail from "@/components/products-detail.vue";
@@ -36,12 +25,6 @@ import ProductsDetail from "@/components/products-detail.vue";
 export default {
   name: 'App',
   components: {
-<<<<<<< HEAD
-    LoginCard,
-    
-
-
-=======
     NewsHome,
     BannerImg,
     ScrollHome,
@@ -49,7 +32,6 @@ export default {
 
     HeaderComponente,
     FooterComponente
->>>>>>> b35cead94150328fb1e473808f0ff82d1a52d2ee
   },
 
   methods: {

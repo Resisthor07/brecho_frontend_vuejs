@@ -2,60 +2,63 @@
 import { mdiFormTextboxPassword } from '@mdi/js';
 
 <template>
+
     <v-container fluid>
        
-        <v-row center>
-            <v-img src="../assets/logo.png" height="100" contain></v-img>
-        </v-row>
-
-        <v-form :key="center">
-
-            <v-row :key="center">
-                <v-col
-                cols="12"
-                sm="6"
-                >
-                <v-text-field
-                    
-                    v-model="username"
-                    label="Login"
-                    
-                    outlined
-                ></v-text-field>
-                </v-col>
-                
-
-            </v-row>
-            <v-rom >
-                <v-col 
-                cols="12"
-                sm="6"
-                >
-                <v-text-field
-                
-                    v-model="password"
-                    :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                    :rules="[rules.required, rules.min]"
-                    :type="show1 ? 'text' : 'password'"
-                    name="input-10-1"
-                    label="Senha"
-                    hint="At least 8 characters"
-                    counter
-                    outlined
-                    @click:append="show1 = !show1"
-                ></v-text-field>
-                </v-col>
-            
-                <v-btn 
-                class="mr-4"
-                @click="submit"
-                >
-                ENTRAR
-                </v-btn>
-            
-            </v-rom>
+        
+        <v-img src="../assets/logo.png" height="200" contain></v-img>
       
-    </v-form>
+
+      <v-row justify="center" justify-content="center">
+        <v-col
+        cols="12"
+        sm="4"
+        >
+        <v-text-field
+        
+            v-model="username"
+            label="Login"
+            
+            outlined
+        ></v-text-field>
+        </v-col>
+      </v-row>     
+
+      
+      <v-row justify="center" justify-content="center">
+        <v-col 
+       
+        class="text-center"        
+        cols="12"
+        sm="4"
+        
+        >
+        <v-text-field 
+
+            v-model="password"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
+            label="Senha"
+            hint="At least 8 characters"
+            outlined
+            @click:append="show1 = !show1"
+        ></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-row justify="center" justify-content="center">
+        <v-btn 
+          
+          color="#FE7271"
+          justify="center" justify-content="center"
+          class="mr-4"
+          @click="submit">
+              ENTRAR
+              </v-btn>
+      </v-row>
+        
+   
 
     </v-container>
 </template>
