@@ -1,37 +1,30 @@
 <template>
-  <v-app>
-    <v-main>
-      <header-componente></header-componente>
-      <banner-img></banner-img>
-      <scroll-home :produtos="produtos" titulo="Novidades"></scroll-home>
-      <banner-img></banner-img>
-      <news-home></news-home>
-      <scroll-home></scroll-home>
-      <base-formulario></base-formulario>
-    </v-main>
-    <footer-componente></footer-componente>
-  </v-app>
+  <main-layout>
+    <banner-img></banner-img>
+    <scroll-home :produtos="produtos" titulo="Novidades"></scroll-home>
+    <banner-img></banner-img>
+    <news-home></news-home>
+    <scroll-home></scroll-home>
+  </main-layout>
 
 </template>
 
+
 <script>
-import HeaderComponente from "@/components/header-componente";
-import ScrollHome from "@/components/ScrollHome";
-import BannerImg from "@/components/banner-img";
-import FooterComponente from "@/components/footer-componente";
-import BaseFormulario from "@/components/main-layout";
+// @ is an alias to /src
 import NewsHome from "@/components/news-home";
 
+import BannerImg from "@/components/banner-img";
+import ScrollHome from "@/components/ScrollHome";
+import MainLayout from "@/components/main-layout";
+
 export default {
-  name: "home-view",
+  name: 'HomeView',
   components: {
+    MainLayout,
     NewsHome,
-    BaseFormulario,
-    FooterComponente,
     BannerImg,
     ScrollHome,
-    HeaderComponente,
-
   },
   data: () => ({
     produtos: [
@@ -77,12 +70,6 @@ export default {
         favorite: true
       }
     ]
-
-
   })
 }
 </script>
-
-<style scoped>
-
-</style>
