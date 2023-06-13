@@ -4,6 +4,13 @@
       <header-componente></header-componente>
       <product-card></product-card>
       <LoginCard></LoginCard>
+
+      <banner-img></banner-img>
+      <news-home></news-home>
+      <scroll-home></scroll-home>
+      <banner-img></banner-img>
+      <scroll-home></scroll-home>
+      <tabela-dados></tabela-dados>
       <footer-componente></footer-componente>
     </v-main>
 
@@ -13,31 +20,45 @@
 <script>
 
 import HeaderComponente from "@/components/header-componente";
-import { mdiShoppingOutline } from '@mdi/js';
+import {mdiShoppingOutline} from '@mdi/js';
+import LoginCard from "./components/loginCard.vue";
 
 import ScrollHome from "@/components/ScrollHome";
 import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
 import loginCard from "./components/loginCard.vue";
 
-import FooterComponente from "@/components/footer-componente.vue";
+import FooterComponente from "@/components/footer-componente.vue"
+import TabelaDados from "@/components/tabela-dados";
+
 import ProductsDetail from "@/components/products-detail.vue";
 
 export default {
   name: 'App',
+
   components: {
+<<<<<<< HEAD
     NewsHome,
     BannerImg,
     ScrollHome,
     ProductsDetail,
     loginCard,
+=======
+    LoginCard,
+    TabelaDados,
+    NewsHome,
+    BannerImg,
+    ScrollHome,
+   // ProductsDetail,
+
+>>>>>>> 2ce5b98fffa3565ffcca338d84f11b81ca306e45
     HeaderComponente,
     FooterComponente
   },
 
-  methods: {
+  methods:{
 
-    click: function () {
+    click : function (){
       console.log("teste")
     }
   },
@@ -53,7 +74,6 @@ export default {
   }),
 };
 </script>
-
 <style>
   @font-face {
     font-family: 'Dongle Bold';
@@ -119,7 +139,7 @@ export default {
   .bg-ff7{
     background-color: #FF7272;
   }
-  
+
   .c313{
     color: #313131;
   }
