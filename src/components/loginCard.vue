@@ -108,5 +108,11 @@ p{
   justify-content:flex-end
 }
 
+.v-btn__content{
+  color: white;
+  font-family: 'Dongle Regular';
+  font-weight: bold;
+}
+
 
 </style>

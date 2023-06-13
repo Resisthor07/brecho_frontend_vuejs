@@ -34,12 +34,7 @@ export default {
   name: 'App',
 
   components: {
-<<<<<<< HEAD
     LoginCard,
-    
-
-
-=======
     NewsHome,
     BannerImg,
     ScrollHome,
