@@ -6,13 +6,15 @@ import SvgIcon from '@jamescoyle/vue-icon';
 //import cadastroCliente from "@/components/cadastroCliente";
 //import VueMask from "v-mask";
 import LoginCard from "@/components/loginCard.vue"
+import sacolaCompras from "@/components/sacolaComprasCard.vue"
+import listaDesejo from "@/components/listadedesejos-view.vue"
 
 
 Vue.config.productionTip = false
 
 new Vue({
-  vuetify, SvgIcon,LoginCard,
-  render: h => h(LoginCard)
+  vuetify, SvgIcon,LoginCard,sacolaCompras,listaDesejo,
+  render: h => h(sacolaCompras)
 }).$mount('#app')
 //Vue.use(VueMask)
 

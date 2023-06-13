@@ -3,13 +3,11 @@ import { mdiFormTextboxPassword } from '@mdi/js';
 
 <template>
 
-    <v-container>
+    <v-container fluid>
 
       <v-row flex-direction="column" >
 
-        <v-img src="../assets/logo.png" height="200" contain></v-img>
-        
-
+        <v-img src="../assets/logo.png" height="150" contain></v-img>
         
         <v-col
          
@@ -26,36 +24,31 @@ import { mdiFormTextboxPassword } from '@mdi/js';
               v-model="username"
               label="Login"
               outlined
-          > outlined</v-text-field>
-        </v-col>
-          
-
+          ></v-text-field>
         
-          <v-col 
-            cols="12"
-            sm="4"
-            justify-content="flex-end" >
-              <v-text-field
-                font-family="Dongle Regular"
-                background-color="rgba(217, 217, 217, 0.51)"
-                v-model="password"
-                :rules="[rules.required, rules.min]"
-                :type="show1 ? 'text' : 'password'"
-                name="input-10-1"
-                label="Senha"
-                hint="Favor inserir 8 caracteres"
-                outlined
-                @click:append="show1 = !show1"
-                  
-              ></v-text-field>
+          <v-text-field
+            font-family="Dongle Regular"
+            background-color="rgba(217, 217, 217, 0.51)"
+            v-model="password"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'password'"
+            name="input-10-1"
+            label="Senha"
+            hint="Favor inserir 8 caracteres"
+            outlined
+            @click:append="show1 = !show1"
+              
+          ></v-text-field>
 
-              <v-rom align-items="flex-end" >
-                <p>Esqueceu a senha</p>
-              </v-rom>
+          <v-rom align-items="flex-end" >
+            <p>Esqueceu a senha</p>
+          </v-rom>
             
-          </v-col >
+        </v-col >
 
           <v-btn 
+            width="12vw"
+            height="7vh"
             color="rgba(254, 114, 113)"
             font-family="Dongle Regular"
             justify="center"
@@ -113,6 +106,7 @@ p{
   font-family: 'Dongle Regular';
   font-weight: bold;
 }
+
 
 
 </style>
