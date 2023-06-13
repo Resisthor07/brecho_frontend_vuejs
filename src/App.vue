@@ -26,10 +26,7 @@ import LoginCard from "./components/loginCard.vue";
 import ScrollHome from "@/components/ScrollHome";
 import BannerImg from "@/components/banner-img";
 import NewsHome from "@/components/news-home";
-import loginCard from "./components/loginCard.vue";
-
-import FooterComponente from "@/components/footer-componente.vue"
-import TabelaDados from "@/components/tabela-dados";
+>>>>>>> b35cead94150328fb1e473808f0ff82d1a52d2ee
 
 import ProductsDetail from "@/components/products-detail.vue";
 
@@ -38,20 +35,16 @@ export default {
 
   components: {
 <<<<<<< HEAD
+    LoginCard,
+    
+
+
+=======
     NewsHome,
     BannerImg,
     ScrollHome,
     ProductsDetail,
-    loginCard,
-=======
-    LoginCard,
-    TabelaDados,
-    NewsHome,
-    BannerImg,
-    ScrollHome,
-   // ProductsDetail,
 
->>>>>>> 2ce5b98fffa3565ffcca338d84f11b81ca306e45
     HeaderComponente,
     FooterComponente
   },
