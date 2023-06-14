@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .row{
   flex-direction: column;
   align-items: center;
