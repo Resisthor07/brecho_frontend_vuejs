@@ -45,13 +45,24 @@
           
         </v-col>
 
-        <v-divider :thickness="5" color="black" class="border-opacity-100" vertical ></v-divider>
+        <v-divider :thickness="7" color="black" class="border-opacity-100" vertical></v-divider>
 
         <v-col cols="12"
         sm="4">
-        <v-img src="../assets/sacolaCompras.png" height="30" contain></v-img>
+         
+          <h1 > Resumo da Compra</h1>
+          
+          <div class="preco">
+            <span>Subtotal: R$ 69,00</span>
+            <span>Desconto: R$ 69,00</span>
+            <span>Frete: R$ 69,00</span>
+            <v-divider color="black" class="border-opacity-100" ></v-divider>
+            <span>Valor Total: R$ 69,00</span>
+          </div>
 
-      </v-col>
+        </v-col>
+
+        
 
       </v-col>
 
@@ -170,6 +181,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  .preco{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
   }
   
 </style>
