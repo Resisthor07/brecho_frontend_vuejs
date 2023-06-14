@@ -14,7 +14,7 @@ Vue.config.productionTip = false
 
 new Vue({
   vuetify, SvgIcon,LoginCard,sacolaCompras,listaDesejo,
-  render: h => h(sacolaCompras)
+  render: h => h(sacolaCompras),
   vuetify,
   SvgIcon,
   router,
