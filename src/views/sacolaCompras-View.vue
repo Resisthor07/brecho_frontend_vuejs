@@ -22,8 +22,27 @@
       <v-col>
         <v-col cols="12"
         sm="8">
-          <v-img src="../assets/sacolaCompras.png" height="30" contain></v-img>
+          <v-col cols="12"
+          sm="6"> 
+            <v-img src="../assets/sacolaCompras.png" height="30" contain></v-img>
+          </v-col>
 
+          <v-col cols="12"
+          sm="4">
+            <span>Titulo do Produto</span>
+            <span>Condiçao:</span>
+            <span>Tamanho:</span>
+            <div class="organiza-tamanh-quantidade">
+              <span>Tamanho: </span>
+              <span>Qnt:</span>
+            </div> 
+          </v-col>
+
+          <v-col cols="12"
+          sm="2">
+            <span class="titulo_desejo">Preço: R$ 80,00</span>
+          </v-col>
+          
         </v-col>
 
         <v-divider :thickness="5" color="black" class="border-opacity-100" vertical ></v-divider>
@@ -132,6 +151,25 @@
     justify-content: center;
     flex-direction: row;
     align-items: center;
+  }
+
+  .col-sm-8{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .col-sm-4{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+  .organiza-tamanh-quantidade{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
 </style>
