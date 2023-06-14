@@ -5,10 +5,10 @@
 
       <v-container class="mt-15" style="max-width: 1400px">
         <v-alert dense outlined type="error"
-        v-for="(itens, i) in erros"
+                 v-for="(itens, i) in erros"
                  :key="i"
-
-        >{{itens}}</v-alert>
+        >{{ itens }}
+        </v-alert>
         <v-form ref="form" validate-on="input">
           <v-row class="d flex justify-center align-center ">
             <v-icon x-large class="pr-5">mdi-account</v-icon>
@@ -51,8 +51,7 @@
             <v-row class="d flex justify-space-between is-flex-direction-row">
             <span class="d-flex flex-row is-center" style="width: 450px">
             <v-text-field
-
-                label="CEP"
+                               label="CEP"
                 outlined
                 v-mask="'#####-###'" v-model="cliente.cep"
                 maxlength="9"
@@ -66,7 +65,6 @@
             >mdi-magnify</v-icon>
               </span>
               <v-text-field
-
                   v-model="cliente.logradouro"
                   label="Logradouro"
                   outlined
@@ -78,7 +76,6 @@
 
               <v-text-field
                   v-model="cliente.bairro"
-
                   class="mr-10"
                   label="Bairro"
                   outlined
@@ -119,11 +116,11 @@
         </v-form>
       </v-container>
       <v-snackbar
-        v-model="alerta"
-        timeout="5000"
+          v-model="alerta"
+          timeout="5000"
 
-        >
-        {{resposta}}
+      >
+        {{ resposta }}
       </v-snackbar>
 
     </v-main>
@@ -135,7 +132,7 @@
 import headerComponente from "@/components/header-componente";
 import FooterComponente from "@/components/footer-componente";
 import axios from "axios";
-import ClienteClient  from "@/clients/cliente-client";
+import ClienteClient from "@/clients/cliente-client";
 
 export default {
   name: "cadastroCliente",
@@ -157,10 +154,10 @@ export default {
   data: () => ({
     myImputModel: '',
     imputCEP: '',
-    alerta:false,
-    resposta:'',
+    alerta: false,
+    resposta: '',
     bairro: '',
-    erros:[],
+    erros: [],
     cliente: {
       nome: '',
       telefone: '',
@@ -180,21 +177,19 @@ export default {
       axios.get(`https://viacep.com.br/ws/${this.cliente.cep.replace('-', '')}/json/`).then(response => (this.cep = response.data));
     },
 
-    cadastrar(){
+    cadastrar() {
       let apiCliente = new ClienteClient();
 
       apiCliente.cadastrar(this.cliente).then(response => {
         this.resposta = response.data
-        this.erros =[]
-      this.alerta=true;
+        this.erros = []
+        this.alerta = true;
       }).catch(response => {
         this.erros = response.data
 
 
       });
     }
-
-
 
 
   }
