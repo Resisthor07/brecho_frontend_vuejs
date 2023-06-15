@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import listadedesejosView from "@/views/listadedesejosView";
+import ListaDeDesejosView from "@/views/ListaDeDesejosView";
 import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
 
@@ -19,7 +19,7 @@ const routes = [
     {
         path: '/lista-de-desejos',
         name: 'listaDesejos',
-        component: listadedesejosView
+        component: ListaDeDesejosView
     },
     {
         path: '/detalhes',
