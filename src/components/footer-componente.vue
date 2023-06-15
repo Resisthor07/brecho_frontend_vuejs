@@ -71,6 +71,7 @@
             </div>
             <div class="parte_de_baixo_footer">
                 <p class="lista_footer paragrafo_footer">2023 todos os direitos reservados - Desenvolvido por G7</p>
+                <router-link class="lista_footer" to="/login">flor da fronteira</router-link>
             </div>
 
 

@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import listadedesejosView from "@/views/ListaDeDesejosView";
+import listadedesejosView from "@/views/listadedesejosView";
 import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
+
+
+import loginView from "@/views/login-View"
 
 Vue.use(VueRouter)
 
@@ -27,6 +30,11 @@ const routes = [
         path: '/resultados',
         name: 'resultados',
         component: resultadobuscaView
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: loginView
     }
 ]
 
