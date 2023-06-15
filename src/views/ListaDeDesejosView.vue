@@ -33,7 +33,7 @@ import MainLayout from "@/components/main-layout";
 
 
 export default {
-  name: "listaDeDesejosView",
+  name: "ListaDeDesejosView",
   components: {
     MainLayout,
 

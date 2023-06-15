@@ -6,20 +6,22 @@ import VueMask from "v-mask";
 import router from './router'
 import app from './App'
 import sacolaCompras from '@/views/sacolaCompras-View.vue'
-import listaDesejo from '@/views/listadedesejosView.vue'
-
+import listaDesejo from '@/views/ListaDeDesejosView.vue'
+import productDetail from '@/views/product-detailView.vue'
+import 'vuetify/dist/vuetify.css';
+import fontes from '@/assets/styles.css'
 
 
 
 Vue.config.productionTip = false
 
 new Vue({
-  vuetify, SvgIcon,LoginCard,sacolaCompras,listaDesejo,app,
+  vuetify, SvgIcon,LoginCard,sacolaCompras,listaDesejo,app,fontes,productDetail,
   //render: h => h(sacolaCompras),
   //vuetify,
   //SvgIcon,
   router,
-  render: h => h(sacolaCompras)
+  render: h => h(productDetail)
 }).$mount('#app')
 Vue.use(VueMask)
 
