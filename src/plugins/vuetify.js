@@ -10,7 +10,7 @@ export default new Vuetify({
             light: {
                 primary: '#FF7272', // #E53935
                 secondary: 'rgba(255,114,114,0.7)', // #FFCDD2
-
+                
             },
         },
     },

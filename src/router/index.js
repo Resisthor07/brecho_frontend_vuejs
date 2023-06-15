@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import listadedesejosView from "@/views/ListaDeDesejosView";
-import productsDetail from "@/components/products-detail";
+import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
 
 Vue.use(VueRouter)
@@ -20,8 +20,8 @@ const routes = [
     },
     {
         path: '/detalhes',
-        name: 'detalhes',
-        component: productsDetail
+        name: 'ProductDetail',
+        component: ProductDetail
     },
     {
         path: '/resultados',
