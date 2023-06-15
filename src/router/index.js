@@ -5,6 +5,9 @@ import listadedesejosView from "@/views/listadedesejosView";
 import productsDetail from "@/components/products-detail";
 import resultadobuscaView from "@/views/resultadobusca-view";
 
+
+import loginView from "@/views/login-View"
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,6 +30,11 @@ const routes = [
         path: '/resultados',
         name: 'resultados',
         component: resultadobuscaView
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: loginView
     }
 ]
 
