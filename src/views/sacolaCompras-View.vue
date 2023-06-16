@@ -137,7 +137,7 @@
   }
 </script>
   
-<style lang="scss">
+<style scoped lang="scss">
 
   .titulo_sacola{
     align-items: flex-start;
