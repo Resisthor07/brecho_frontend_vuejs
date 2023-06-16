@@ -4,75 +4,88 @@
         color="primary"
         padless
         >
-            <div class="parte_de_cima_footer">
-                <v-spacer></v-spacer>
             
-                <v-list color="primary">
-                    <v-list-item>
-                        <v-list-item-title class="titulo_footer">Instrucional</v-list-item-title>
-                    </v-list-item>
 
-                    <v-list-item
-                    v-for="item in instrucional"
-                    :key="item">
-                        <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
-                    </v-list-item>
-                </v-list>
+            <v-container fluid>
+                <v-row class="justify-space-around">
+                    <v-col cols="auto" class="col_footer">
+                        <v-list color="primary">
+                            <v-list-item>
+                                <v-list-item-title class="titulo_footer">Instrucional</v-list-item-title>
+                            </v-list-item>
 
-                <v-spacer></v-spacer>
+                            <v-list-item
+                            v-for="item in instrucional"
+                            :key="item">
+                                <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
 
-                <v-list color="primary">
-                    <v-list-item>
-                        <v-list-item-title class="titulo_footer">Pagamentos</v-list-item-title>
-                    </v-list-item>
-                    <v-img src="../assets/pagamento.png"
-                    max-width="275px"
-                    width="28vw">
-                    </v-img>
+                    <v-col cols="auto">
+                        <v-list color="primary">
+                            <v-list-item>
+                                <v-list-item-title class="titulo_footer">Pagamentos</v-list-item-title>
+                            </v-list-item>
+                            <v-img src="../assets/pagamento.png"
+                            max-width="275px"
+                            min-width="185px"
+                            width="28vw">
+                            </v-img>
 
-                </v-list>
+                        </v-list>
+                    </v-col>
 
-                <v-spacer></v-spacer>
+                    <v-col cols="auto">
+                        <v-list color="primary">
+                            <v-list-item>
+                                <v-list-item-title class="titulo_footer">Contato</v-list-item-title>
+                            </v-list-item>
 
-                <v-list color="primary">
-                    <v-list-item>
-                        <v-list-item-title class="titulo_footer">Contato</v-list-item-title>
-                    </v-list-item>
+                            <v-list-item
+                            v-for="item in contato"
+                            :key="item">
+                                
+                                <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
+                                
+                                <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                                
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
 
-                    <v-list-item
-                    v-for="item in contato"
-                    :key="item">
-                        
-                        <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
-                        
-                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
-                        
-                    </v-list-item>
-                </v-list>
+                    <v-col cols="auto">
+                        <v-list color="primary">
+                            <v-list-item>
+                                <v-list-item-title class="titulo_footer">Redes Sociais</v-list-item-title>
+                            </v-list-item>
 
-                <v-spacer></v-spacer>
+                            <v-list-item
+                            v-for="item in redes"
+                            :key="item">
+                                <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
+                                
+                                <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                                
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
 
-                <v-list color="primary">
-                    <v-list-item>
-                        <v-list-item-title class="titulo_footer">Redes Sociais</v-list-item-title>
-                    </v-list-item>
+                </v-row>
+                
+                <v-row class="divisoria">
+                    <v-col cols="4" offset="4">
+                        <p class="lista_footer paragrafo_footer">2023 todos os direitos reservados - Desenvolvido por G7</p>
+                
+                    </v-col>
 
-                    <v-list-item
-                    v-for="item in redes"
-                    :key="item">
-                        <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
-                        
-                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
-                        
-                    </v-list-item>
-                </v-list>
+                    <v-col cols="2" offset="2">
+                        <router-link class="lista_footer" to="/login">flor da fronteira</router-link>
+                    </v-col>
+                </v-row>
+            </v-container>
+
             
-                <v-spacer></v-spacer>
-            </div>
-            <div class="parte_de_baixo_footer">
-                <p class="lista_footer paragrafo_footer">2023 todos os direitos reservados - Desenvolvido por G7</p>
-                <router-link class="lista_footer" to="/login">flor da fronteira</router-link>
-            </div>
 
 
         </v-footer>
@@ -135,6 +148,12 @@
 
     @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
+
+    .col_footer
+    {
+        display: flex;
+        justify-content: start;
+    }
     .titulo_footer
     {
         color: #FFFFFF;
@@ -153,20 +172,9 @@
         font-weight: 300;
     }
 
-    .parte_de_cima_footer
-    {
-        margin-top: 30px;
-        margin-bottom: 30px;
-        display: flex;
-        width: 100%;
-    }
 
-    .parte_de_baixo_footer
-    {   
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .divisoria
+    {
         border-top: 4px solid #FFFFFF ;
     }
 
