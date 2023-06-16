@@ -1,29 +1,25 @@
 <template>
-    <v-app>
-        <header-componente></header-componente>
-        <v-main>
+    <main-layout>    
+        
             <div class="div_buscav">
                 <p class="caminho_buscav">Home / {{ consulta }}</p>
             </div>
             <resultado-busca-componente :vazio="vazio" :produtos="produtos" :consulta="consulta"></resultado-busca-componente>
-        </v-main>
-        <footer-componente></footer-componente>
-    </v-app>
+       
+    </main-layout>
 </template>
 
 <script>
 
-    import HeaderComponente from "@/components/header-componente";
-    import FooterComponente from "@/components/footer-componente";
     import ResultadoBuscaComponente from "@/components/resultadobusca-componente";
+    import MainLayout from "@/components/main-layout";
 
 
     export default{
         name: "resultadoBuscaView",
         components: {
-            HeaderComponente,
-            ResultadoBuscaComponente,
-            FooterComponente
+            MainLayout,
+            ResultadoBuscaComponente
         },
         data: () => ({
             produtos:[],
@@ -97,7 +93,13 @@
         width: 100%;
         border-bottom: 4px solid #FFD0D0 ;
         display: flex;
-        align-items: center;
+        align-items: start;
+        margin: 0px;
     }
 
+    .container_buscav
+    {
+        margin: 0px;
+        padding: 0px;
+    }
 </style>
