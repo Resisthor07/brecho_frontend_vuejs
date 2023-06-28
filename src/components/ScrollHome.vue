@@ -8,7 +8,7 @@
   >
     <v-slide-item
         v-for="n in produtos"
-        :key="n"
+        :key="n.id"
     >
       <product-card :produto="n"></product-card>
     </v-slide-item>
@@ -27,7 +27,7 @@ export default {
   methods: {},
   props:{
     titulo: String,
-    produtos: Object
+    produtos: Array
   },
 
 

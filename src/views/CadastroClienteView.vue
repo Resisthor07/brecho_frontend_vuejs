@@ -24,7 +24,7 @@
                   outlined
                   counter
                   maxlength="150"
-                  :rule="rules"
+
                   hint="Limite de 150 caracteres"
               ></v-text-field>
               <v-text-field
@@ -45,7 +45,8 @@
                   outlined
                   counter
                   maxlength="150"
-                  :rules="rules"
+
+
                   hint="Limite de 150 caracteres"></v-text-field>
             </v-row>
             <v-row class="d flex justify-space-between is-flex-direction-row">
@@ -110,7 +111,6 @@
                 <v-icon>mdi-check-circle-outline</v-icon>
                 Confirmar
               </v-btn>
-
             </v-row>
           </v-col>
         </v-form>
@@ -118,7 +118,6 @@
       <v-snackbar
           v-model="alerta"
           timeout="5000"
-
       >
         {{ resposta }}
       </v-snackbar>
@@ -144,6 +143,9 @@ export default {
 
   computed: {
     cep: {
+      get: function (){
+        return this.cliente.cep
+      },
       set: function (valor) {
         this.cliente.logradouro = valor.logradouro;
         this.cliente.bairro = valor.bairro;
@@ -157,6 +159,7 @@ export default {
     alerta: false,
     resposta: '',
     bairro: '',
+
     erros: [],
     cliente: {
       nome: '',
@@ -186,10 +189,9 @@ export default {
         this.alerta = true;
       }).catch(response => {
         this.erros = response.data
-
-
       });
-    }
+    },
+
 
 
   }

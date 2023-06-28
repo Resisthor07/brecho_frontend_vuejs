@@ -1,47 +1,73 @@
 <template>
   <v-container fluid elevation="0">
     <v-card
-        :loading="loading"
+
         class="ma-0  "
-        max-width="280"
+        width="280"
+        min-height="480"
         elevation="0"
         outlined
+        rounded
     >
-      <div class="containeIimg">
-        <v-icon class="favoriteIcon"
+
+      <v-card-text class="containeIimg d-flex justify-end ">
+        <v-icon class="favoriteIcon "
                 :color="corIcone"
                 size="30"
-                @click="mudaCorIcone()"
+                @click="mudaCorIcone(produto)"
         >{{ iconeFavorito }}
         </v-icon>
+      </v-card-text>
+      <div>
         <img
-            width="100%"
+            width="250"
+
             class="pa-5 mt-4"
-            :src="produto.imagem"
+            :src="produto.fotosDoProduto"
         />
       </div>
+
       <v-card-title
-      >{{ produto.nome }}</v-card-title>
-      <v-card-title>R$ {{ produto.valorAtual }}</v-card-title>
+      >{{ produto.nome }}
+      </v-card-title>
+      <v-card-title>
+        {{ formataValor(produto.valorAtual) }}
+      </v-card-title>
     </v-card>
   </v-container>
 </template>
 <script>
+import {useFavoritosStore} from "@/store/store";
+
 export default {
   name: "productCard",
   methods: {
     mudaCorIcone: function () {
       this.favorite = !this.favorite
+      if(this.favorite === true){
+        useFavoritosStore().adionarFavoritos(this.produto.id)
+      }
+      else{
+        useFavoritosStore().removerFavoritos(this.produto.id)
+      }
+    },
+
+    formataValor(valor) {
+      return valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
     }
+
   },
   props: {
     produto: Object
   },
-  mounted(){
-    this.favorite = this.produto.favorite
+  mounted() {
+    this.favorite = useFavoritosStore().isFavorite(this.produto.id)
+
   },
-  data:() =>({
-    favorite: false
+  data: () => ({
+    favorite: false,
+    preco: 0,
+    favorito:[]
   }),
   computed: {
     corIcone: function () {
@@ -56,7 +82,7 @@ export default {
       }
       return "mdi-star-outline"
     }
-  }
+  },
 
 
 };
@@ -72,7 +98,8 @@ export default {
   right: 3%;
   top: 3%;
 }
-.bordaCard{
+
+.bordaCard {
   border-inline: 5px;
 }
 </style>
