@@ -1,5 +1,6 @@
 <template>
   <v-container fluid elevation="0">
+
     <v-card
 
         class="ma-0  "
@@ -18,6 +19,9 @@
         >{{ iconeFavorito }}
         </v-icon>
       </v-card-text>
+     
+      
+      <router-link :to="{name: 'ProductDetail', query: {id: produto.id}}">
       <div>
         <img
             width="250"
@@ -26,16 +30,20 @@
             :src="produto.fotosDoProduto"
         />
       </div>
-
+      
       <v-card-title
       >{{ produto.nome }}</v-card-title>
       <v-card-title>R$ {{ produto.valorAtual}}</v-card-title>
       {{ produto.nome }}
       
+      >{{ produto.nome }}
+      </v-card-title>
+      </router-link>
       <v-card-title>
         {{ formataValor(produto.valorAtual) }}
       </v-card-title>
     </v-card>
+
   </v-container>
 </template>
 <script>

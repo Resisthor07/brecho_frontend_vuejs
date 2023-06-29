@@ -9,14 +9,16 @@
       </v-row>
       <v-row>
         <v-col class="col_desejo">
-          <span class="descricao_desejo" v-if="quantidade !== 0">{{ quantidade }} items adicionado(s) em sua lista</span>
+          <span class="descricao_desejo" >{{
+              quantidade
+            }} items adicionado(s) em sua lista</span>
         </v-col>
       </v-row>
 
       <v-row>
         <v-col class="col_desejo">
-          <scroll-home v-if="!vazio" :produtos="produtos"></scroll-home>
-          <h1 class="aviso_desejo" v-if="vazio">Sua lista de desejos está vazia</h1>
+          <scroll-home  :produtos="produtos"></scroll-home>
+
         </v-col>
       </v-row>
     </v-container>
@@ -30,6 +32,8 @@
 
 import ScrollHome from "@/components/ScrollHome";
 import MainLayout from "@/components/main-layout";
+import {useFavoritosStore} from "@/store/store";
+import ProdutoClient from "@/clients/produto-client";
 
 
 export default {
@@ -41,30 +45,70 @@ export default {
 
   },
   data: () => ({
+
     produtos: [],
     vazio: true,
     quantidade: 0
   }),
+
+  watch: {
+
+   recarregaPagina: function (newVal) {
+     console.log(newVal)
+       this.findById()
+  }
+  },
+
+  created: function () {
+
+    this.findById()
+
+
+
+  },
+
+
   methods: {
-    adicionaProdutos() {
-      for (let i = 0; i < 5; i++) {
-        this.produtos.push({
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
+
+
+
+
+    async    findById(){
+
+      const getApi = new ProdutoClient();
+      const valor = useFavoritosStore().listaFavoritos
+      console.log(valor)
+
+      valor.map((valor) => {
+
+        getApi.findById(valor).then((produto) => {
+          this.produtos.push(produto)
+        this.quantidade=  this.produtos.length
+
         })
-      }
-      if (this.produtos.length == 0) {
-        this.vazio = true;
-      } else {
-        this.vazio = false;
-        this.quantidade = this.produtos.length;
-      }
-    }
+
+    })},
+
+    // adicionaProdutos() {
+    //
+    //   for (let i = 0; i < 5; i++) {
+    //     this.produtos.push({
+    //       nome: "Calça",
+    //       valorAtual: "100,23",
+    //       imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
+    //       favorite: true
+    //     })
+    //   }
+    //   if (this.produtos.length == 0) {
+    //     this.vazio = true;
+    //   } else {
+    //     this.vazio = false;
+    //     this.quantidade = this.produtos.length;
+    //   }
+    // }
   },
   mounted: function () {
-    this.adicionaProdutos();
+    // this.adicionaProdutos();
   }
 }
 </script>
