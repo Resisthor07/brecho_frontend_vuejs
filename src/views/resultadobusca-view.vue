@@ -5,6 +5,7 @@
             <div class="div_buscav">
                 <p class="caminho_buscav">Home / {{ consulta }}</p>
             </div>
+          <span></span>
             <resultado-busca-componente :vazio="vazio" :produtos="produtos" :consulta="consulta"></resultado-busca-componente>
         </v-main>
         <footer-componente></footer-componente>

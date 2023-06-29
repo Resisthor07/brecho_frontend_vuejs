@@ -5,6 +5,19 @@
   </div>
 </template>
 
+<script>
+import {useFavoritosStore} from "@/store/store";
+
+export default {
+  name: 'App',
+
+  created() {
+    useFavoritosStore().restoreState()
+  }
+}
+
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

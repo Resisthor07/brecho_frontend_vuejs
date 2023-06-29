@@ -13,8 +13,8 @@
                     </v-list-item>
 
                     <v-list-item
-                    v-for="item in instrucional"
-                    :key="item">
+                    v-for="(item,i) in instrucional"
+                    :key="i">
                         <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
                     </v-list-item>
                 </v-list>
@@ -40,8 +40,8 @@
                     </v-list-item>
 
                     <v-list-item
-                    v-for="item in contato"
-                    :key="item">
+                    v-for="(item,i) in contato"
+                    :key="i">
                         
                         <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
                         
@@ -58,8 +58,8 @@
                     </v-list-item>
 
                     <v-list-item
-                    v-for="item in redes"
-                    :key="item">
+                    v-for="(item,i) in redes"
+                    :key="i">
                         <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
                         
                         <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>

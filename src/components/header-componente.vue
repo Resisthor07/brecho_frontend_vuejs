@@ -29,11 +29,12 @@
           <router-link to="/detalhes">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
-              <span class="text--accent-2 ">{{ contaitens }} Itens</span>
+              <span v-if="this.contaitens <= 1" class="text--accent-2 ">{{ contaitens }} Item</span>
+              <span v-if="this.contaitens > 1" class="text--accent-2 ">{{ contaitens }} Itens</span>
             </v-btn>
           </router-link>
           <router-link to="/lista-de-desejos">
-            <v-btn elevation="0" color="white" class="ml-2 ba">
+            <v-btn elevation="0" color="white" class="mr-4 ">
               <v-icon>mdi-star-outline</v-icon>
               <span class="text--darken-3 "
               >Favoritos</span>
@@ -41,12 +42,13 @@
           </router-link>
         </v-col>
       </v-row>
-      <router-link to="/resultados">
+      <router-link :to="{name: '/resultados', query: menus.nome}">
       <v-row
           class="d-flex justify-space-around backgroundMenu">
         <v-btn
             elevation="0"
             v-for="item in menus"
+            value="item.nome"
             :key="item.nome"
             width="20%" height="45" color="primary t">
           {{ item.nome }}
@@ -71,7 +73,7 @@ export default {
 
   data: () => ({
     mdiShoppingOutline,
-    contaitens: 12,
+    contaitens: 10,
     menus: [{
       nome: "calças"
     },
@@ -85,7 +87,6 @@ export default {
         nome: "Blazers"
       },
       {nome: "Acessórios"}
-
     ]
   }),
 };

@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+//import HomeView from '../views/HomeView.vue'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
 import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
 
 
 import loginView from "@/views/login-View"
+
+import HomeView from "@/views/HomeView";
 
 Vue.use(VueRouter)
 
