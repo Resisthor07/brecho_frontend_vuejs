@@ -8,6 +8,11 @@ export const useFavoritosStore = defineStore('favoritos', {
     getters: {
         isFavorite: (state) => (id) => {
             return state.favoritos.indexOf(id) > -1
+        },
+
+        listaFavoritos: (state) => {
+            return state.favoritos
+
         }
     },
 

@@ -8,6 +8,7 @@
 <script>
 import {useFavoritosStore} from "@/store/store";
 
+
 export default {
   name: 'App',
 

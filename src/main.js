@@ -13,15 +13,18 @@ import app from './App'
 import 'vuetify/dist/vuetify.css';
 import fontes from '@/assets/styles.css'
 
-const pinia = createPinia()
 Vue.use(PiniaVuePlugin)
+const pinia = createPinia()
+
 Vue.config.productionTip = false
 Vue.directive("mask", VueMaskDirective);
+
 new Vue({
   vuetify, SvgIcon,fontes,router,pinia,
 
 
   render: h => h(app)
+
 }).$mount('#app')
 
 
