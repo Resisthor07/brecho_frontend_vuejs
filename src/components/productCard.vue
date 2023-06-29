@@ -22,7 +22,7 @@
       </div>
       <v-card-title
       >{{ produto.nome }}</v-card-title>
-      <v-card-title>R$ {{ produto.valorAtual }}</v-card-title>
+      <v-card-title>R$ {{ produto.valorAtual}}</v-card-title>
     </v-card>
   </v-container>
 </template>

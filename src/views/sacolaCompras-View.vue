@@ -60,33 +60,89 @@
        
           <h1 class="mb-5"> Resumo da Compra</h1>
           
-          <v-row class="mt-5 " cols="8">
-            
-            <div class="d-flex flex-column mt-5">
-              <div class="d-flex mt-5">
-                <span >Subtotal:</span>
-                <span >R$ 69,00</span>
-              </div>
-              
-              <div class="mt-2">
-                <span >Desconto:</span>
-                <span >R$ 69,00</span>
-              </div>
-              
-              <div class="mt-2">
-                <span >Frete: </span>
-                <span >R$ 69,00</span>
+          <v-row justify="space-between" class="mt-5 ">
+            <v-col cols="12">
+              <div class="d-flex flex-column mt-5">
+                
+                <v-row cols="10" class="mb-2">
+                  <v-col >
+                    <span>Subtotal:</span>
+                  </v-col>
+                  <v-col >
+                    <span>R$ 80,00</span>
+                  </v-col>
+                </v-row>
 
-              </div>
+                <v-row cols="10" class="mb-2">
+                  <v-col>
+                    <span>Desconto:</span>
+                  </v-col>
+                  <v-col >
+                    <span>R$ -10,00</span>
+                  </v-col>
+                </v-row>
 
-            
-            
-              <v-divider color="black" class="border-opacity-100 mt-5" w ></v-divider>
-            
-              <span class="mt-5">Valor Total: R$ 69,00</span>
+                <v-row cols="10" class="mb-2">
+                  <v-col>
+                    <span>Frete:</span>
+                  </v-col>
+                  <v-col>
+                    <span>R$ 10,00</span>
+                  </v-col>
+              </v-row>
 
-            </div>
-            
+      <v-divider color="black" class="border-opacity-100 mt-5"></v-divider>
+
+      <span class="mt-5 mb-10 font-weight-black">Valor Total: R$ 80,00</span>
+    </div>
+  </v-col>
+          </v-row>
+
+
+
+
+
+
+
+          <v-row class=" d-flex flex-column align-center">
+            <v-row cols="6">
+              <v-col 
+                cols="12"
+                
+                class="text-center">
+                <div  cols="6" class="text-center">
+                  <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    sm="3"
+                    
+                  >
+                  Finalizar Compra
+                  </v-btn>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col 
+                cols="12"
+                
+                class="text-center">
+                <div cols="6"  class="text-center">
+                  <v-btn
+                    rounded
+                    color="primary"
+                    dark
+                    sm="3"
+                    
+                  >
+                  Continuar Comprando
+                  </v-btn>
+                </div>
+              </v-col>
+            </v-row>
+           
+
           </v-row>
 
         </v-col>
@@ -107,6 +163,7 @@
 
   
   import MainLayout from "@/components/main-layout";
+
 
   export default {
     name: "home-view",

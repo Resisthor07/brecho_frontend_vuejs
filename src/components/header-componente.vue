@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container fluid elevation="0" height="50">
-      <v-row class="d-flex justify-space-between mr-14 ml-14">
+      <v-row class="d-flex  justify-space-between mr-14 ml-14">
         <v-col>
           <router-link to="/">
           <v-img
