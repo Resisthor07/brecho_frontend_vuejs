@@ -25,21 +25,35 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+
+
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+
+    &.router-link-exact-active {
+      text-decoration: none;
+      color: black;
+    }
+  }
 }
+
 
 nav {
   padding: 30px;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+   text-decoration: none;
+    color: black;
 
     &.router-link-exact-active {
-      color: #42b983;
+      text-decoration: none;
+      color: black;
     }
-  }
-}
+
+}}
 
 
 </style>

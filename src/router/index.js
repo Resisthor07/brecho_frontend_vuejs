@@ -29,7 +29,7 @@ const routes = [
         component: ProductDetail
     },
     {
-        path: '/resultados',
+        path: '/resultados/:tipo',
         name: 'resultados',
         component: resultadobuscaView
     },

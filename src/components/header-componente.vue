@@ -42,19 +42,23 @@
           </router-link>
         </v-col>
       </v-row>
-      <router-link :to="{name: '/resultados', query: menus.nome}">
+
       <v-row
           class="d-flex justify-space-around backgroundMenu">
-        <v-btn
-            elevation="0"
+        <router-link
             v-for="item in menus"
             value="item.nome"
             :key="item.nome"
+            :to="{name: 'resultados', params:{ tipo: item.nome}}">
+        <v-btn
+            elevation="0"
+
             width="20%" height="45" color="primary t">
           {{ item.nome }}
         </v-btn>
+        </router-link>
       </v-row>
-      </router-link>
+
     </v-container>
   </div>
 </template>

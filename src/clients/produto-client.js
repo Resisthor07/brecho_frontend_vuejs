@@ -41,5 +41,14 @@ export default class ProdutoClient {
         }
     }
 
+    async findByTipo(tipo) {
+        try {
+            return (await this.axiosCliente.get(`?tipo=${tipo}`)).data
+        } catch (error) {
+            return Promise.reject(error.response)
 
+        }
+    }
 }
+
+
