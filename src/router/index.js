@@ -31,6 +31,7 @@ const routes = [
         name: 'resultados',
         component: resultadobuscaView
     },
+    
     {
         path: '/login',
         name: 'login',

@@ -97,55 +97,53 @@
     </div>
   </v-col>
           </v-row>
+            <v-row class=" d-flex flex-column align-center">
+              <v-row cols="6">
+                <v-col 
+                  cols="12"
+                  
+                  class="text-center">
+                  <div  cols="6" class="text-center">
+                    <v-btn
+                      rounded
+                      color="primary"
+                      dark
+                      sm="3"
+                      
+                    >
+                    Finalizar Compra
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col 
+                  cols="12"
+                  
+                  class="text-center">
+                  <div cols="6"  class="text-center">
+                    <v-btn
+                      rounded
+                      color="primary"
+                      dark
+                      sm="3"
+                      
+                    >
+                    <v-icon
+                      dark
+                      left
+                    >
+                      mdi-arrow-left
+                    </v-icon>
+                    Continuar Comprando
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+            
 
-
-
-
-
-
-
-          <v-row class=" d-flex flex-column align-center">
-            <v-row cols="6">
-              <v-col 
-                cols="12"
-                
-                class="text-center">
-                <div  cols="6" class="text-center">
-                  <v-btn
-                    rounded
-                    color="primary"
-                    dark
-                    sm="3"
-                    
-                  >
-                  Finalizar Compra
-                  </v-btn>
-                </div>
-              </v-col>
             </v-row>
-            <v-row>
-              <v-col 
-                cols="12"
-                
-                class="text-center">
-                <div cols="6"  class="text-center">
-                  <v-btn
-                    rounded
-                    color="primary"
-                    dark
-                    sm="3"
-                    
-                  >
-                  Continuar Comprando
-                  </v-btn>
-                </div>
-              </v-col>
-            </v-row>
-           
-
-          </v-row>
-
-        </v-col>
+          </v-col>
 
         
 
