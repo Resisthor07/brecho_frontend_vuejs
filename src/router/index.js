@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
 import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
-
+import sacolaCompras from "@/views/sacolaCompras-View";
 
 import loginView from "@/views/login-View"
 
@@ -33,13 +33,20 @@ const routes = [
         name: 'resultados',
         component: resultadobuscaView
     },
+
     {
         path: '/login',
         name: 'login',
         component: loginView
-    }
+    },
+    {
+        path: '/sacola',
+        name: 'sacola',
+        component: sacolaCompras
+
+    },
     //Samir
-    , {
+    {
         path: '/administrador',
         name: 'administrador',
         component: () => import('@/views/PaginaAdm.vue')

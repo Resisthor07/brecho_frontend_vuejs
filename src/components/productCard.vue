@@ -19,6 +19,8 @@
         >{{ iconeFavorito }}
         </v-icon>
       </v-card-text>
+     
+      
       <router-link :to="{name: 'ProductDetail', query: {id: produto.id}}">
       <div>
         <img
@@ -28,9 +30,13 @@
             :src="produto.fotosDoProduto"
         />
       </div>
-
+      
       <v-card-title
-      >{{ produto.nome }}
+      >{{ produto.nome }}</v-card-title>
+      <v-card-title>R$ {{ produto.valorAtual}}</v-card-title>
+      {{ produto.nome }}
+      
+    <v-card-title>{{ produto.nome }}
       </v-card-title>
       </router-link>
       <v-card-title>

@@ -5,8 +5,6 @@ import { createPinia, PiniaVuePlugin } from 'pinia'
 import { VueMaskDirective } from "v-mask";
 
 
-
-
 import router from './router'
 import app from './App'
 
