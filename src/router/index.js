@@ -38,6 +38,13 @@ const routes = [
         name: 'login',
         component: loginView
     }
+    //Samir
+    , {
+        path: '/administrador',
+        name: 'administrador',
+        component: () => import('@/views/PaginaAdm.vue')
+    }
+    //samir
 ]
 
 const router = new VueRouter({
