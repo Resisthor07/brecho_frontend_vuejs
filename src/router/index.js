@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
 import ProductDetail from "@/views/product-detailView"
 import resultadobuscaView from "@/views/resultadobusca-view";
-
+import sacolaCompras from "@/views/sacolaCompras-View";
 
 import loginView from "@/views/login-View"
 
@@ -42,7 +42,8 @@ const routes = [
     {
         path: '/sacola',
         name: 'sacola',
-        component: loginView
+        component: sacolaCompras
+        
     },
 
 ]

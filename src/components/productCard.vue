@@ -36,7 +36,7 @@
       <v-card-title>R$ {{ produto.valorAtual}}</v-card-title>
       {{ produto.nome }}
       
-      >{{ produto.nome }}
+    <v-card-title>{{ produto.nome }}
       </v-card-title>
       </router-link>
       <v-card-title>

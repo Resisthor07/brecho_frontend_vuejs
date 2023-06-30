@@ -26,7 +26,7 @@
           ></v-text-field>
         </v-col>
         <v-col align="right">
-          <router-link to="/detalhes">
+          <router-link to="/sacola">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
               <span v-if="this.contaitens <= 1" class="text--accent-2 ">{{ contaitens }} Item</span>
