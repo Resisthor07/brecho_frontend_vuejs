@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h2 class="d-flex justify-start font-family font-title">Produtos Vendidos</h2>
+        <h2 class="d-flex justify-start font-family font-title font-style">Produtos Vendidos</h2>
         <v-container>
             <v-row>
                 <v-col :class="columnsStyle" :cols="columnsWidth[i]" v-for="name, i in columnsContent" :key="name">
@@ -21,7 +21,8 @@
                 </v-col>
                 <v-col :class="columnsStyle" :cols="columnsWidth[3]">
                     <span class="more-space">{{ dataClients[i].total }}</span>
-                    <v-btn append-icon="fa-solid fa-arrow-right" class="rounded-cicle" flat>
+                    <v-btn class="rounded-cicle background-white flat" @click="mudaRota">
+                        <v-icon>fa-solid fa-arrow-right</v-icon>
                     </v-btn>
                 </v-col>
             </v-row>
@@ -30,13 +31,15 @@
 </template>
 
 <script lang="ts">
+// import router from '@/router';
+
 export default {
-    name: "SelledProducts",
-    data() {
+    name: "AdmProdutosVendidos",
+    data: () => {
         return {
             columnsContent: ["DATA", "CLIENTE", "ITENS", "TOTAL"],
             columnsWidth: ["2", "56", "2", "2"],
-            columnsStyle: "d-flex justfy-start font-family font-size mb-0 pb-0",
+            columnsStyle: "d-flex justfy-start font-style font-size mb-0 pb-0",
             dataClients: [{
                 id: "1",
                 date: "05/06/2023",
@@ -50,8 +53,13 @@ export default {
                 name: "Samir Cavalcante",
                 itens: "8",
                 total: "220,00"
-            }
-            ]
+            },
+            ],
+        }
+    },
+    methods: {
+        mudaRota() {
+            this.$router.push('/login')
         }
     }
 }

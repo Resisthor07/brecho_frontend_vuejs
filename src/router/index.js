@@ -49,7 +49,29 @@ const routes = [
     {
         path: '/administrador',
         name: 'administrador',
-        component: () => import('@/views/PaginaAdm.vue')
+        component: () => import('@/views/PaginaAdm.vue'),
+        children: [
+            {
+                path: '/administrador-produtos',
+                name: 'produtos',
+                component: () => import('@/components/AdmProdutos.vue')
+            },
+            {
+                path: '/administrador-pedidos',
+                name: 'pedidos',
+                component: () => import('@/components/AdmPedidos.vue')
+            },
+            {
+                path: '/administrador-cadastro-produtos',
+                name: 'cadastro-produtos',
+                component: () => import('@/components/AdmCadastroProdutos.vue')
+            },
+            {
+                path: '/administrador-configuracoes',
+                name: 'configuracoes',
+                component: () => import('@/components/AdmConfiguracoes.vue')
+            }
+        ]
     }
     //samir
 ]
