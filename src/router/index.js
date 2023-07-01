@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+//import HomeView from '../views/HomeView.vue'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
 import ProductDetail from "@/views/product-detailView.vue"
 import resultadobuscaView from "@/views/resultadobusca-view";
-
+import sacolaCompras from "@/views/sacolaCompras-View";
 
 import loginView from "@/views/login-View"
+
+import HomeView from "@/views/HomeView";
 
 Vue.use(VueRouter)
 
@@ -27,15 +29,29 @@ const routes = [
         component: ProductDetail
     },
     {
-        path: '/resultados',
+        path: '/resultados/:tipo',
         name: 'resultados',
         component: resultadobuscaView
     },
+
     {
         path: '/login',
         name: 'login',
         component: loginView
+    },
+    {
+        path: '/sacola',
+        name: 'sacola',
+        component: sacolaCompras
+
+    },
+    //Samir
+    {
+        path: '/administrador',
+        name: 'administrador',
+        component: () => import('@/views/PaginaAdm.vue')
     }
+    //samir
 ]
 
 const router = new VueRouter({
