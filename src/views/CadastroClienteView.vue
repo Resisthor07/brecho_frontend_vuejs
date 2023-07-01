@@ -1,7 +1,7 @@
 <template>
-  <v-app>
-    <header-componente></header-componente>
-    <v-main>
+    <v-app>
+        <header-componente></header-componente>
+        <v-main>
 
       <v-container class="mt-15" style="max-width: 1400px">
         <v-alert dense outlined type="error"
@@ -111,6 +111,7 @@
                 <v-icon>mdi-check-circle-outline</v-icon>
                 Confirmar
               </v-btn>
+
             </v-row>
           </v-col>
         </v-form>
@@ -118,13 +119,14 @@
       <v-snackbar
           v-model="alerta"
           timeout="5000"
+
       >
         {{ resposta }}
       </v-snackbar>
 
-    </v-main>
-    <footer-componente></footer-componente>
-  </v-app>
+        </v-main>
+        <footer-componente></footer-componente>
+    </v-app>
 </template>
 
 <script>
@@ -134,18 +136,15 @@ import axios from "axios";
 import ClienteClient from "@/clients/cliente-client";
 
 export default {
-  name: "cadastroCliente",
+    name: "cadastroCliente",
 
-  components: {
-    FooterComponente,
-    headerComponente
-  },
+    components: {
+        FooterComponente,
+        headerComponente
+    },
 
   computed: {
     cep: {
-      get: function (){
-        return this.cliente.cep
-      },
       set: function (valor) {
         this.cliente.logradouro = valor.logradouro;
         this.cliente.bairro = valor.bairro;
@@ -159,7 +158,6 @@ export default {
     alerta: false,
     resposta: '',
     bairro: '',
-
     erros: [],
     cliente: {
       nome: '',
@@ -170,18 +168,18 @@ export default {
       numResidencia: '',
       bairro: ''
 
-    }
-  }),
-  methods: {
-    reset() {
-      this.$refs.form.reset()
-    },
-    buscaCep() {
-      axios.get(`https://viacep.com.br/ws/${this.cliente.cep.replace('-', '')}/json/`).then(response => (this.cep = response.data));
-    },
+        }
+    }),
+    methods: {
+        reset() {
+            this.$refs.form.reset()
+        },
+        buscaCep() {
+            axios.get(`https://viacep.com.br/ws/${this.cliente.cep.replace('-', '')}/json/`).then(response => (this.cep = response.data));
+        },
 
-    cadastrar() {
-      let apiCliente = new ClienteClient();
+        cadastrar() {
+            let apiCliente = new ClienteClient();
 
       apiCliente.cadastrar(this.cliente).then(response => {
         this.resposta = response.data
@@ -189,15 +187,14 @@ export default {
         this.alerta = true;
       }).catch(response => {
         this.erros = response.data
+
+
       });
-    },
+    }
 
 
-
-  }
+    }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

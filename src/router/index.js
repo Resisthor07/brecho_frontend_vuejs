@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //import HomeView from '../views/HomeView.vue'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
-import ProductDetail from "@/views/product-detailView"
+import ProductDetail from "@/views/product-detailView.vue"
 import resultadobuscaView from "@/views/resultadobusca-view";
 import sacolaCompras from "@/views/sacolaCompras-View";
 
