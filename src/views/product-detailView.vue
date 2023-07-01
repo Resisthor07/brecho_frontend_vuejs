@@ -2,7 +2,7 @@
     <main-layout>
         <v-container class="d-flex flex-row">
             <v-row>
-                <v-col cols="6" class="mr-5">
+                <v-col cols="6" class="p-5">
                     <div class="w-100">
                         <img src="../assets/camiseta.png" alt="Imagem produto" style="max-width: 100%;">
                     </div>
@@ -24,21 +24,24 @@
                         placerat neque sem, interdum pretium massa
                         euismod id. Donec gravida laoreet mollis.
                     </p>
-                        
-                    <v-row cols="12" class="d-flex flex-row justify-center w-100">
-                        <v-col cols="6">
-                            <v-btn class="btn-compra mr-3 borda-padrao">
-                                <v-icon>mdi-currency-usd</v-icon>
-                                <p class="dongle-light f25 c313 ma-0">Comprar</p>
-                            </v-btn>
+                    
+                    <v-col class="row">
+                        <v-col cols="6" class="px-0">
+                            <v-sheet>
+                                <button class="btn-compra borda-padrao w-100">
+                                    <v-icon>mdi-currency-usd</v-icon>
+                                    <p class="dongle-light f25 c313 ma-0">Comprar</p>
+                                </button>
+                            </v-sheet>
                         </v-col>
-                        <v-col cols="6">
-                            <v-btn class="borda-padrao dongle-regular f25 c313">
+                        <v-col cols="6" class="px-0">
+                            <button class="btn-compra borda-padrao dongle-regular f25 c313">
                                 <v-icon>mdi-plus-circle-outline</v-icon>
                                 Add to cart
-                            </v-btn>
+                            </button>
                         </v-col>
-                    </v-row>
+                    </v-col>
+                
                 </v-col>
             </v-row>
         </v-container>
@@ -57,9 +60,13 @@ export default {
 </script>
 
 <style>
-.btn-compra{
+.btn-compra {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color: transparent !important;
-    box-shadow: none !important;
     border-radius: 15px !important;
+    width: 100%;
 }
 </style>

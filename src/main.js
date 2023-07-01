@@ -21,7 +21,7 @@ new Vue({
   //vuetify,
   //SvgIcon,
   router,
-  render: h => h(sacolaCompras)
+  render: h => h(productDetail)
 }).$mount('#app')
 Vue.use(VueMask)
 
