@@ -9,16 +9,23 @@
                     </div>
                     <v-divider color="white"></v-divider>
                     <div class="d-flex flex-column h-70">
-                        <router-link :to="{ name: rotas[i] }" v-for="(titulo, i) in titulosDosBotoes" :key="titulo">
-                            <v-btn @click="$emit('seleciona-item', titulo)"
-                                class="border-radius-0 cor-de-fundo font-color flat d-flex justify-start no-uppercase w-100">{{
-                                    titulo
-                                }}</v-btn>
-                        </router-link>
+                        <div class="h-70 d-flex flex-column justify-space-between">
+                            <router-link class="mt-fc-20" :to="{ name: rotas[i] }" v-for="(titulo, i) in titulosDosBotoes"
+                                :key="titulo">
+                                <v-btn @click="$emit('seleciona-item', titulo)"
+                                    class="border-radius-0 cor-de-fundo font-color flat d-flex justify-start no-uppercase w-100 "><v-icon
+                                        class="h-icone">{{
+                                            iconesBotoes[i] }}</v-icon>{{
+        titulo
+    }}</v-btn>
+                            </router-link>
+                        </div>
                     </div>
                     <v-divider color="white"></v-divider>
                     <div class="d-flex h-20">
-                        <v-btn class="border-radius-0 cor-de-fundo font-color flat d-flex grow h-100">Sair</v-btn>
+                        <v-btn class="border-radius-0 cor-de-fundo font-color flat d-flex grow h-100">Sair<v-icon
+                                class="h-icone ml-10">fa-solid
+                                fa-arrow-right-from-bracket</v-icon></v-btn>
                     </div>
                 </v-container>
             </v-col>
@@ -36,6 +43,7 @@ export default {
         return {
             titulosDosBotoes: ['Inicio', 'Produtos', 'Cadastro de Produtos', 'Pedidos', 'Configuracoes gerais'],
             rotas: ['login', 'produtos', 'cadastro-produtos', 'pedidos', 'configuracoes'],
+            iconesBotoes: ["fa-solid fa-house", "fa-solid fa-basket-shopping", "fa-solid fa-plus", "fa-solid fa-box-open", "fa-solid fa-gear"],
         }
     },
     components: {
@@ -64,6 +72,22 @@ $font-color: white;
     margin: 0;
 }
 
+.mt-10 {
+    margin-top: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.h-icone::before {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.mt-fc-20:first-child {
+    margin-top: 20px;
+}
 
 .h-70 {
     height: 70%;
