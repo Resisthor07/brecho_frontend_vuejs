@@ -121,22 +121,28 @@
                   cols="12"
                   
                   class="text-center">
-                  <div cols="6"  class="text-center">
-                    <v-btn
-                      rounded
-                      color="primary"
-                      dark
-                      sm="3"
-                      
-                    >
-                    <v-icon
-                      dark
-                      left
-                    >
-                      mdi-arrow-left
-                    </v-icon>
-                    Continuar Comprando
-                    </v-btn>
+                    <div cols="6"  class="text-center">
+                      <v-sheet>
+                      <v-btn
+                      class="btn-compra borda-padrao w-100"
+                        rounded
+                        color="primary"
+                        dark
+                        sm="3"
+                        
+                      >
+                      <v-icon
+                        dark
+                        left
+                      >
+                        mdi-arrow-left
+                      </v-icon>
+                      Continuar Comprando
+                      </v-btn>
+                    </v-sheet>
+                            
+                                
+                        
                   </div>
                 </v-col>
               </v-row>
@@ -158,67 +164,13 @@
 </template>
   
 <script>
-
-  
-  import MainLayout from "@/components/main-layout";
+import MainLayout from '@/components/main-layout';
 
 
-  export default {
-    name: "home-view",
-    components: {
-      MainLayout
 
-      
-  
-    },
-    data: () => ({
-      produtos:[
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-  favorite: true
-        },
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        },{
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        },
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        },
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        },
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        },
-        {
-          nome: "Calça",
-          valorAtual: "100,23",
-          imagem: "https://cdn.vuetifyjs.com/images/cards/cooking.png",
-          favorite: true
-        }
-      ]
-  
-  
-    })
-  }
+
+
+
 </script>
   
 <style scoped lang="scss">
