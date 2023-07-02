@@ -7,7 +7,7 @@
             </v-row>
             <v-row>
                 <v-col cols="8">
-                    <v-radio-group v-model="radios">
+                    <v-radio-group v-model="selectPagamento">
                         <v-radio class="mb-4" value="dinheiro">
                             <template v-slot:label>
                                 <div class="dongle-light f30 c313">Dinheiro</div>
@@ -25,7 +25,7 @@
                         </v-radio>
                     </v-radio-group>
                     <v-row class="justify-end">
-                        <v-btn class="botao-entrega mr-3" color="#7BB593">
+                        <v-btn class="botao-entrega mr-3" color="#7BB593" @click="adicionaPagamento()">
                             <p class="donwcase dongle-light f25 cfff mb-0">Seguir para entrega</p>
                             <v-icon class="ml-3" color="white">mdi-arrow-right</v-icon>
                         </v-btn>
@@ -59,19 +59,45 @@
 
 <script>
 import MainLayout from '@/components/main-layout';
+import VendaClient from '@/clients/venda-client';
 
 // eslint-disable-next-line
 export default {
     name: 'PagamentoView',
     components: {
         MainLayout
+    },
+    data: () => ({
+        venda: {
+            produtos: [],
+            pagamento: null
+        }
+    }),
+    computed: {
+        listaProdutos() {
+            return this.$store.state.listaProdutos
+        }
+    },
+    methods: {
+        adicionaPagamento() {
+            VendaClient.cadastrar(this.venda)
+                .then(response => {
+                    this.venda = new VendaClient();
+                    this.venda.pagamento = this.selectPagamento;
+                    this.venda.produtos = this.listaProdutos;
+                    console.log(this.venda);
+                }).catch (error => {
+                    console.log(error);
+                })
+
+        }
     }
 }
 </script>
 
 <style scoped lang="scss">
 .border-bottom {
-    border-bottom: 1px solid black;
+    border-bottom: 1.8px solid black;
 }
 
 label {
@@ -79,7 +105,7 @@ label {
 }
 
 .valores-compra {
-    border-left: 1px solid black;
+    border-left: 1.8px solid black;
 }
 
 .botao-entrega {
