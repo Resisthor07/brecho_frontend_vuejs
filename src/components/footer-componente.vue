@@ -1,5 +1,97 @@
 <template>
 
+
+<v-footer
+        color="primary"
+        padless
+        >
+            
+
+            <v-container fluid>
+                <v-row class="justify-space-around">
+                    <v-col cols="auto" class="col_footer">
+                        <v-list color="primary" class="text-start">
+                            <v-list-item>
+                                <v-list-item-title class="dongle-regular cfff f35">Instrucional</v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item
+                            v-for="item in instrucional"
+                            :key="item">
+                                <v-list-item-title v-text="item" class="dongle-light cfff f30"></v-list-item-title>
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
+
+                    <v-col cols="auto">
+                        <v-list color="primary" class="text-start">
+                            <v-list-item>
+                                <v-list-item-title class="dongle-regular cfff f35">Pagamentos</v-list-item-title>
+                            </v-list-item>
+                            <v-img src="../assets/pagamento.png"
+                            max-width="275px"
+                            min-width="185px"
+                            width="28vw">
+                            </v-img>
+
+                        </v-list>
+                    </v-col>
+
+                    <v-col cols="auto">
+                        <v-list color="primary" class="text-start">
+                            <v-list-item>
+                                <v-list-item-title class="dongle-regular cfff f35">Contato</v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item
+                            v-for="item in contato"
+                            :key="item">
+                                
+                                <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
+                                
+                                <v-list-item-title v-text="item.text" class="espaco_icone_texto_footer dongle-light cfff f30"></v-list-item-title>
+                                
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
+
+                    <v-col cols="auto">
+                        <v-list color="primary" class="text-start">
+                            <v-list-item>
+                                <v-list-item-title class="dongle-regular cfff f35">Redes Sociais</v-list-item-title>
+                            </v-list-item>
+
+                            <v-list-item
+                            v-for="item in redes"
+                            :key="item">
+                                <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
+                                
+                                <v-list-item-title v-text="item.text" class="espaco_icone_texto_footer dongle-light cfff f30"></v-list-item-title>
+                                
+                            </v-list-item>
+                        </v-list>
+                    </v-col>
+
+                </v-row>
+                
+                <v-row class="divisoria_footer">
+                    <v-col cols="6" offset="3">
+                        <p class="dongle-regular cfff f35">2023 todos os direitos reservados - Desenvolvido por G7</p>
+                
+                    </v-col>
+
+                    <v-col cols="3">
+                        <router-link class="dongle-regular cfff f35" to="/login">flor da fronteira</router-link>
+                    </v-col>
+                </v-row>
+            </v-container>
+
+            
+
+
+        </v-footer>
+
+    <!--
     <v-footer
     color="primary"
     padless
@@ -9,13 +101,13 @@
         
             <v-list color="primary" class="text-start">
                 <v-list-item>
-                    <v-list-item-title class="titulo_footer">Instrucional</v-list-item-title>
+                    <v-list-item-title class="dongle-regular cfff f35">Instrucional</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item
                 v-for="(item,i) in instrucional"
                 :key="i">
-                    <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
+                    <v-list-item-title v-text="item" class="dongle-regular cfff f30"></v-list-item-title>
                 </v-list-item>
             </v-list>
 
@@ -23,7 +115,7 @@
 
             <v-list color="primary" class="text-start">
                 <v-list-item>
-                    <v-list-item-title class="titulo_footer">Pagamentos</v-list-item-title>
+                    <v-list-item-title class="dongle-regular cfff f35">Pagamentos</v-list-item-title>
                 </v-list-item>
                 <v-img src="../assets/pagamento.png"
                 max-width="275px"
@@ -36,7 +128,7 @@
 
             <v-list color="primary" class="text-start">
                 <v-list-item>
-                    <v-list-item-title class="titulo_footer">Contato</v-list-item-title>
+                    <v-list-item-title class="dongle-regular cfff f35">Contato</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item
@@ -45,7 +137,7 @@
                     
                     <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
                     
-                    <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                    <v-list-item-title v-text="item.text" class="espaco_icone_texto_footer dongle-regular cfff f30"></v-list-item-title>
                     
                 </v-list-item>
             </v-list>
@@ -54,7 +146,7 @@
 
             <v-list color="primary" class="text-start">
                 <v-list-item>
-                    <v-list-item-title class="titulo_footer">Redes Sociais</v-list-item-title>
+                    <v-list-item-title class="dongle-regular cfff f35">Redes Sociais</v-list-item-title>
                 </v-list-item>
 
                 <v-list-item
@@ -62,7 +154,7 @@
                 :key="i">
                     <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
                     
-                    <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                    <v-list-item-title v-text="item.text" class="espaco_icone_texto_footer dongle-regular cfff f30"></v-list-item-title>
                     
                 </v-list-item>
             </v-list>
@@ -76,7 +168,7 @@
 
 
     </v-footer>
-
+-->
 </template>
 
 <script>
@@ -133,52 +225,22 @@ export default {
 
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+    .espaco_icone_texto_footer
+    {
+        margin-left: 10px;
+    }
 
-.titulo_footer
-{
-    color: #FFFFFF;
-    font-family: "Dongle";
-    font-style: normal;
-    font-size: 30px;
-    font-weight: 400;
-}
+    .branco_footer
+    {
+        color: #FFFFFF;
+        background-color: #FFFFFF;
 
-.lista_footer
-{
-    color: #FFFFFF;
-    font-family: "Dongle";
-    font-style: normal;
-    font-size: 30px;
-    font-weight: 300;
-}
+    }
 
-.parte_de_cima_footer
-{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    width: 100%;
-}
-
-.parte_de_baixo_footer
-{   
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 4px solid #FFFFFF ;
-}
-
-.paragrafo_footer
-{
-    margin: 15px;
-}
-
-.icone_texto_footer
-{
-    margin-left: 13px;
-}
+    .divisoria_footer
+    {
+        border-top: 4px solid #FFFFFF ;
+    }
 
 
 </style>
