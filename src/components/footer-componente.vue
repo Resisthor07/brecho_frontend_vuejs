@@ -13,6 +13,12 @@
                             <v-list-item>
                                 <v-list-item-title class="titulo_footer">Instrucional</v-list-item-title>
                             </v-list-item>
+                    <v-list-item
+                    v-for="(item,i) in instrucional"
+                    :key="i">
+                        <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
+                    </v-list-item>
+                </v-list>
 
                             <v-list-item
                             v-for="item in instrucional"
@@ -59,6 +65,16 @@
                             <v-list-item>
                                 <v-list-item-title class="titulo_footer">Redes Sociais</v-list-item-title>
                             </v-list-item>
+                    <v-list-item
+                    v-for="(item,i) in contato"
+                    :key="i">
+                        
+                        <v-icon v-text="item.icon" color="#FFFFFF" size="26"></v-icon>
+                        
+                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                        
+                    </v-list-item>
+                </v-list>
 
                             <v-list-item
                             v-for="item in redes"
@@ -85,6 +101,18 @@
                 </v-row>
             </v-container>
 
+<<<<<<< HEAD
+=======
+                    <v-list-item
+                    v-for="(item,i) in redes"
+                    :key="i">
+                        <v-icon v-text="item.icon" color="#FFFFFF" size="30"></v-icon>
+                        
+                        <v-list-item-title v-text="item.text" class="lista_footer icone_texto_footer"></v-list-item-title>
+                        
+                    </v-list-item>
+                </v-list>
+>>>>>>> 7740f981e1da7911103a29767a3b70d42c24e6c0
             
 
 
