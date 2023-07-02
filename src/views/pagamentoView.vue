@@ -6,11 +6,52 @@
                 <p class="dongle-light f40 ml-4 mb-0">Formas de pagamento</p>
             </v-row>
             <v-row>
-                <v-radio-group class="dongle-light">
-                    <v-radio class="label" label="Dinheiro" value="1"></v-radio>
-                    <v-radio class="label" label="Cartão de crédito" value="2"></v-radio>
-                    <v-radio class="label" label="Pix" value="3"></v-radio>
-                </v-radio-group>
+                <v-col cols="8">
+                    <v-radio-group v-model="radios">
+                        <v-radio class="mb-4" value="dinheiro">
+                            <template v-slot:label>
+                                <div class="dongle-light f30 c313">Dinheiro</div>
+                            </template>
+                        </v-radio>
+                        <v-radio class="input-radio mb-4" value="cartao">
+                            <template v-slot:label>
+                                <div class="dongle-light f30 c313">Cartão de crédito</div>
+                            </template>
+                        </v-radio>
+                        <v-radio class="input-radio mb-4" value="pix">
+                            <template v-slot:label>
+                                <div class="dongle-light f30 c313">Pix</div>
+                            </template>
+                        </v-radio>
+                    </v-radio-group>
+                    <v-row class="justify-end">
+                        <v-btn class="botao-entrega mr-3" color="#7BB593">
+                            <p class="donwcase dongle-light f25 cfff mb-0">Seguir para entrega</p>
+                            <v-icon class="ml-3" color="white">mdi-arrow-right</v-icon>
+                        </v-btn>
+                    </v-row>
+                </v-col>
+                <v-col cols="4" class="dongle-light valores-compra">
+                    <p class="f40 mb-0">Resumo da compra</p>
+
+                    <v-col class="d-flex flex-row justify-space-between py-0">
+                        <p class="f30 mb-0">Subtotal</p>
+                        <div class="f30 mb-0">R$ 69,99</div>
+                    </v-col>
+                    <v-col class="d-flex flex-row justify-space-between py-0">
+                        <p class="f30 mb-0">Desconto</p>
+                        <div class="f30 mb-0">R$ 69,99</div>
+                    </v-col>
+                    <v-col class="d-flex flex-row justify-space-between py-0">
+                        <p class="f30 mb-0">Frete</p>
+                        <div class="f30 mb-0">R$ 69,99</div>
+                    </v-col>
+                    <hr>
+                    <v-col class="d-flex flex-row justify-space-between py-0">
+                        <p class="f30">Valor total</p>
+                        <div class="f30 mb-0">R$ 69,99</div>
+                    </v-col>
+                </v-col>
             </v-row>
         </v-container>
     </main-layout>
@@ -33,7 +74,16 @@ export default {
     border-bottom: 1px solid black;
 }
 
-label{
+label {
     font-size: 500px;
+}
+
+.valores-compra {
+    border-left: 1px solid black;
+}
+
+.botao-entrega {
+    border-radius: none;
+    box-shadow: none;
 }
 </style>

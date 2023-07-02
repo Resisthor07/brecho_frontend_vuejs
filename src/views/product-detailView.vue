@@ -34,8 +34,6 @@
                                 </button>
                             </v-sheet>
                         </v-col>
-                        <v-col cols="6" class="px-0">
-                            <button class="btn-compra borda-padrao dongle-regular f25 c313" >
                         <v-col cols="6" class="px-3">
                             <button class="btn-compra borda-padrao dongle-regular f25 c313">
                                 <v-icon>mdi-plus-circle-outline</v-icon>
