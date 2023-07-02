@@ -85,6 +85,8 @@ export default {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
 
+        }).catch((error) =>{
+          console.log(error);
         })
 
     })},
