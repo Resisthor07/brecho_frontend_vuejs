@@ -58,6 +58,7 @@
         font-weight: 400;
         font-style: normal;
         color: #313131;
+
     }
 
     .aviso_buscac
