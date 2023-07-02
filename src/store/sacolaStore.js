@@ -1,6 +1,6 @@
 import {defineStore} from 'pinia'
 
-export const useFavoritosStore = defineStore('sacola', {
+export const useSacolaStore = defineStore('sacola', {
 
     state: () => ({
         sacola: [],

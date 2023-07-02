@@ -2,6 +2,8 @@
 
   <main-layout>
   
+import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
     <v-conteiner>
 
       <v-row class="organiza-header">
@@ -20,21 +22,20 @@
 
       <v-divider :thickness="5" color="black" class="border-opacity-100"> </v-divider>
 
-      <v-col >
+      <v-col v-for="item in produtos" :key="item.id">
 
         <v-col cols="8"
         sm="8">
           <v-col cols="5"
           sm="6"> 
-            <v-img src="../assets/camiseta.png" ></v-img>
+            <v-img src={{ item.fotosDoProduto}}></v-img>
           </v-col>
 
           <v-col cols="4"
           sm="4">
-            <h1>Camiseta Preta</h1>
-            <span>Condiçao: Usada </span>
-            <span>Tamanho: M</span>
-            <span>Qnt: 1</span>
+            <h1>nome: {{ item.nome }}</h1>
+            <span>Tamanho: {{ item.tamanho }}</span>
+            <span>Qnt: {{ item.quantidade }} </span>
           </v-col>
 
           <v-row cols="2" class="row-preco align-items-center">
@@ -44,7 +45,7 @@
             </v-row>
             
             <v-row>
-              <span class="font-weight-black"> R$ 80,00</span>
+              <span class="font-weight-black"> R$ {{ item.valorAtual}}</span>
             </v-row>
 
           </v-row>
@@ -104,15 +105,17 @@
                   
                   class="text-center">
                   <div  cols="6" class="text-center">
-                    <v-btn
-                      rounded
-                      color="primary"
-                      dark
-                      sm="3"
-                      
-                    >
-                    Finalizar Compra
-                    </v-btn>
+                    <router-link :to="{name:'ProductDetail', params:{listaSacola: this.produtos} }">
+                      <v-btn
+                        rounded
+                        color="primary"
+                        dark
+                        sm="3"
+                        
+                      >
+                      Finalizar Compra
+                      </v-btn>
+                    </router-link>
                   </div>
                 </v-col>
               </v-row>
@@ -165,6 +168,53 @@
   
 <script>
 import MainLayout from '@/components/main-layout';
+import {useSacolaStore} from "@/store/sacolaStore";
+import {ProdutoClient} from "@/clients/produto-client"
+
+export default {
+  name: "sacolaCompras",
+  components: {
+    MainLayout,
+    
+},
+  data: () => ({
+
+    produtos: [],
+    vazio: true,
+    quantidade: 0
+  }),
+  created: function () {
+
+    this.findById()
+
+  },
+  methods: {
+
+    async findById(){
+
+      const getApi = new ProdutoClient();
+      const valor = useSacolaStore().listaSacola
+      console.log(valor)
+
+      valor.map((valor) => {
+
+        getApi.findById(valor).then((produto) => {
+          this.produtos.push(produto)
+        this.quantidade=  this.produtos.length
+
+        })
+
+    })},
+
+   
+  },
+  mounted: function () {
+    // this.adicionaProdutos();
+  }
+
+
+
+}
 
 
 
