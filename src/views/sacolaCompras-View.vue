@@ -14,12 +14,20 @@
             </div>
               <div class="titulo_sacola">
                 <span class="titulo_desejo">Sacola de Compras</span>
-                <span class="titulo_desejo" font-size="2px">4 items adicionado(s) a sacola</span>
+                <span class="titulo_desejo" font-size="2px"> {{quantidade}} items adicionado(s) a sacola</span>
               </div>
         </v-col>
       </v-row>
 
       <v-divider :thickness="5" color="black" class="border-opacity-100"> </v-divider>
+
+      <v-row >
+        <v-col class="col_desejo d-flex justify-center ">
+          <span class="c313 dongle-light f35 " >{{
+              this.quantidade
+            }} items adicionado(s) Sacola</span>
+        </v-col>
+      </v-row>
 
       <v-col v-for="item in produtos" :key="item.id">
 
@@ -176,13 +184,13 @@ export default {
     MainLayout    
 },
   data: () => ({
-    ProdutoClient: new ProdutoClient(),
     produtos: [],
     vazio: true,
-    quantidade: 0
+    quantidade: 0,
+    produtoClient: new ProdutoClient()
   }),
   created: function () {
-
+    console.log(this.quantidade)
     this.findById()
 
   },
