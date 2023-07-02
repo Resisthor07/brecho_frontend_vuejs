@@ -4,12 +4,12 @@
       <v-row>
         <v-col class="col_desejo titulo_poscionamento_desejo">
           <v-icon size="40" color="#ff1617">mdi-star</v-icon>
-          <span class="titulo_desejo">Lista de desejos</span>
+          <span class="c313 dongle-regular f40 posicionamento_texto_desejo">Lista de desejos</span>
         </v-col>
       </v-row>
       <v-row>
         <v-col class="col_desejo">
-          <span class="descricao_desejo" >{{
+          <span class="c313 dongle-light f35" >{{
               quantidade
             }} items adicionado(s) em sua lista</span>
         </v-col>
@@ -85,6 +85,8 @@ export default {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
 
+        }).catch((error) =>{
+          console.log(error);
         })
 
     })},
@@ -115,8 +117,6 @@ export default {
 
 <style scoped>
 
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
-
 .principal_desejo {
   display: flex;
   flex-direction: column;
@@ -131,32 +131,9 @@ export default {
   justify-content: center;
 }
 
-.titulo_desejo {
-  font-family: "Dongle";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  color: #313131;
+.posicionamento_texto_desejo {
   margin-top: 8px;
   margin-left: 8px;
-}
-
-.descricao_desejo {
-  font-family: "Dongle";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 30px;
-  color: #313131;
-  margin: 0px;
-  padding: 0px;
-}
-
-.aviso_desejo {
-  font-family: "Dongle";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 80px;
-  color: #313131;
 }
 
 .col_desejo {

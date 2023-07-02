@@ -34,6 +34,8 @@
                                 </button>
                             </v-sheet>
                         </v-col>
+                        <v-col cols="6" class="px-0">
+                            <button class="btn-compra borda-padrao dongle-regular f25 c313" >
                         <v-col cols="6" class="px-3">
                             <button class="btn-compra borda-padrao dongle-regular f25 c313">
                                 <v-icon>mdi-plus-circle-outline</v-icon>
@@ -56,22 +58,7 @@ export default {
     name: "ProductDetail",
     components: {
         MainLayout
-    },
-    // data: () => ({
-    //     produto
-    // }),
-    // computed: {
-    //     id(){
-    //             this.$route.params.id
-    //     }
-    // },
-    // methods: {
-    //     findById(id){
-    //         ProdutoClient.findById(id).then(sucess => {
-    //             this.produto
-    //         })
-    //     }
-    // }
+    }
 }
 </script>
 

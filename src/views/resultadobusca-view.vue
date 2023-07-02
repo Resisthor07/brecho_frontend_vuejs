@@ -123,4 +123,9 @@ export default {
   align-items: center;
 }
 
+    .container_buscav
+    {
+        margin: 0px;
+        padding: 0px;
+    }
 </style>
