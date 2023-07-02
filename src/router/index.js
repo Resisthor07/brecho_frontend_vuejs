@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //import HomeView from '../views/HomeView.vue'
 import ListaDeDesejosView from "@/views/ListaDeDesejosView";
-import ProductDetail from "@/views/product-detailView.vue"
+import ProductDetail from "@/views/product-detailView.vue";
+import Pagamento from "@/views/pagamentoView.vue"
 import resultadobuscaView from "@/views/resultadobusca-view";
 import sacolaCompras from "@/views/sacolaCompras-View";
 
@@ -27,6 +28,11 @@ const routes = [
         path: '/detalhes',
         name: 'ProductDetail',
         component: ProductDetail
+    },
+    {
+        path: '/pagamento',
+        name: 'checkout-pagamento',
+        component: Pagamento
     },
     {
         path: '/resultados/:tipo',
