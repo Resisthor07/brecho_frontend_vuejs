@@ -1,7 +1,7 @@
 <template>
-  <v-app>
-    <header-componente></header-componente>
-    <v-main>
+    <v-app>
+        <header-componente></header-componente>
+        <v-main>
 
       <v-container class="mt-15" style="max-width: 1400px">
         <v-alert dense outlined type="error"
@@ -24,7 +24,7 @@
                   outlined
                   counter
                   maxlength="150"
-                  :rule="rules"
+
                   hint="Limite de 150 caracteres"
               ></v-text-field>
               <v-text-field
@@ -45,7 +45,8 @@
                   outlined
                   counter
                   maxlength="150"
-                  :rules="rules"
+
+
                   hint="Limite de 150 caracteres"></v-text-field>
             </v-row>
             <v-row class="d flex justify-space-between is-flex-direction-row">
@@ -123,9 +124,9 @@
         {{ resposta }}
       </v-snackbar>
 
-    </v-main>
-    <footer-componente></footer-componente>
-  </v-app>
+        </v-main>
+        <footer-componente></footer-componente>
+    </v-app>
 </template>
 
 <script>
@@ -135,12 +136,12 @@ import axios from "axios";
 import ClienteClient from "@/clients/cliente-client";
 
 export default {
-  name: "cadastroCliente",
+    name: "cadastroCliente",
 
-  components: {
-    FooterComponente,
-    headerComponente
-  },
+    components: {
+        FooterComponente,
+        headerComponente
+    },
 
   computed: {
     cep: {
@@ -167,18 +168,18 @@ export default {
       numResidencia: '',
       bairro: ''
 
-    }
-  }),
-  methods: {
-    reset() {
-      this.$refs.form.reset()
-    },
-    buscaCep() {
-      axios.get(`https://viacep.com.br/ws/${this.cliente.cep.replace('-', '')}/json/`).then(response => (this.cep = response.data));
-    },
+        }
+    }),
+    methods: {
+        reset() {
+            this.$refs.form.reset()
+        },
+        buscaCep() {
+            axios.get(`https://viacep.com.br/ws/${this.cliente.cep.replace('-', '')}/json/`).then(response => (this.cep = response.data));
+        },
 
-    cadastrar() {
-      let apiCliente = new ClienteClient();
+        cadastrar() {
+            let apiCliente = new ClienteClient();
 
       apiCliente.cadastrar(this.cliente).then(response => {
         this.resposta = response.data
@@ -192,10 +193,8 @@ export default {
     }
 
 
-  }
+    }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

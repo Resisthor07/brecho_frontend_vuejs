@@ -19,7 +19,7 @@
                         <v-list-item-title v-text="item" class="lista_footer"></v-list-item-title>
                     </v-list-item>
                 </v-list>
-
+                        <v-list>
                             <v-list-item
                             v-for="item in instrucional"
                             :key="item">
@@ -75,7 +75,7 @@
                         
                     </v-list-item>
                 </v-list>
-
+                <v-list>
                             <v-list-item
                             v-for="item in redes"
                             :key="item">
@@ -100,9 +100,7 @@
                     </v-col>
                 </v-row>
             </v-container>
-
-<<<<<<< HEAD
-=======
+                <v-list>    
                     <v-list-item
                     v-for="(item,i) in redes"
                     :key="i">
@@ -112,7 +110,6 @@
                         
                     </v-list-item>
                 </v-list>
->>>>>>> 7740f981e1da7911103a29767a3b70d42c24e6c0
             
 
 

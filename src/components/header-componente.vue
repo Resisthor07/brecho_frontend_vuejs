@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container fluid elevation="0" height="50">
-      <v-row class="d-flex justify-space-between mr-14 ml-14">
+      <v-row class="d-flex  justify-space-between mr-14 ml-14">
         <v-col>
           <router-link to="/">
           <v-img
@@ -26,14 +26,15 @@
           ></v-text-field>
         </v-col>
         <v-col align="right">
-          <router-link to="/detalhes">
+          <router-link to="/sacola">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
-              <span class="text--accent-2 ">{{ contaitens }} Itens</span>
+              <span v-if="this.contaitens <= 1" class="text--accent-2 ">{{ contaitens }} Item</span>
+              <span v-if="this.contaitens > 1" class="text--accent-2 ">{{ contaitens }} Itens</span>
             </v-btn>
           </router-link>
           <router-link to="/lista-de-desejos">
-            <v-btn elevation="0" color="white" class="ml-2 ba">
+            <v-btn elevation="0" color="white" class="mr-4 ">
               <v-icon>mdi-star-outline</v-icon>
               <span class="text--darken-3 "
               >Favoritos</span>
@@ -41,18 +42,23 @@
           </router-link>
         </v-col>
       </v-row>
-      <router-link to="/resultados">
+
       <v-row
           class="d-flex justify-space-around backgroundMenu">
+        <router-link
+            v-for="item in menus"
+            value="item.nome"
+            :key="item.nome"
+            :to="{name: 'resultados', params:{ tipo: item.nome}}">
         <v-btn
             elevation="0"
-            v-for="item in menus"
-            :key="item.nome"
+
             width="20%" height="45" color="primary t">
           {{ item.nome }}
         </v-btn>
+        </router-link>
       </v-row>
-      </router-link>
+
     </v-container>
   </div>
 </template>
@@ -71,7 +77,7 @@ export default {
 
   data: () => ({
     mdiShoppingOutline,
-    contaitens: 12,
+    contaitens: 10,
     menus: [{
       nome: "calças"
     },
@@ -85,7 +91,6 @@ export default {
         nome: "Blazers"
       },
       {nome: "Acessórios"}
-
     ]
   }),
 };
