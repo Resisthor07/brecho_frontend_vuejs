@@ -1,13 +1,13 @@
 <template>
     <main-layout>
         <v-container class="d-flex flex-row">
-            <v-row>
-                <v-col cols="6" class="p-5">
+            <v-row class="d-flex justify-center align-center">
+                <v-col cols="12" lg="6" class="p-5">
                     <div class="w-100">
                         <img src="../assets/camiseta.png" alt="Imagem produto" style="max-width: 100%;">
                     </div>
                 </v-col>
-                <v-col cols="6" class="d-flex flex-column justify-center align-start">
+                <v-col cols="12" lg="6" class="d-flex flex-column justify-center align-start">
                     <p class="dongle-regular f40 c313 my-0">Camiseta preta em algodão</p>
 
                     <article class="d-flex flex-row w-100 dongle-light f27 c313">
@@ -26,9 +26,9 @@
                     </p>
                     
                     <v-col class="row">
-                        <v-col cols="6" class="px-0">
+                        <v-col cols="6" class="px-3">
                             <v-sheet>
-                                <button class="btn-compra borda-padrao w-100">
+                                <button class="btn-compra borda-padrao">
                                     <v-icon>mdi-currency-usd</v-icon>
                                     <p class="dongle-light f25 c313 ma-0">Comprar</p>
                                 </button>
@@ -36,6 +36,8 @@
                         </v-col>
                         <v-col cols="6" class="px-0">
                             <button class="btn-compra borda-padrao dongle-regular f25 c313" >
+                        <v-col cols="6" class="px-3">
+                            <button class="btn-compra borda-padrao dongle-regular f25 c313">
                                 <v-icon>mdi-plus-circle-outline</v-icon>
                                 Add to cart
                             </button>
@@ -50,13 +52,13 @@
 
 <script>
 import MainLayout from '@/components/main-layout';
+//import ProdutoClient from '@/clients/produto-client';
 
 export default {
     name: "ProductDetail",
     components: {
         MainLayout
     }
-    
 }
 </script>
 
