@@ -89,6 +89,14 @@ export default {
                     console.log(error);
                 })
 
+            .then(() => {
+                this.venda = new VendaClient();
+                this.venda.pagamento = this.selectPagamento;
+                this.venda.produtos = this.listaProdutos;
+                console.log(this.venda);
+            }).catch(error => {
+                console.log(error);
+            })
         }
     }
 }

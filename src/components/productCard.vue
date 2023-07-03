@@ -5,7 +5,7 @@
 
         class="ma-0  "
         width="280"
-        min-height="480"
+        min-height="580"
         elevation="0"
         outlined
         rounded
@@ -33,15 +33,12 @@
       
       <v-card-title
       >{{ produto.nome }}</v-card-title>
-      <v-card-title>R$ {{ produto.valorAtual}}</v-card-title>
-      {{ produto.nome }}
-      
-    <v-card-title>{{ produto.nome }}
-      </v-card-title>
+      <v-card-title>{{ formataValor(produto.valorAtual)}}</v-card-title>
+
+
+
       </router-link>
-      <v-card-title>
-        {{ formataValor(produto.valorAtual) }}
-      </v-card-title>
+
     </v-card>
 
   </v-container>
