@@ -40,10 +40,6 @@ import { mdiFormTextboxPassword } from '@mdi/js';
               
           ></v-text-field>
 
-          <v-rom align-items="flex-end" >
-            <p>Esqueceu a senha</p>
-          </v-rom>
-            
         </v-col >
 
           <v-btn 

@@ -4,6 +4,7 @@ export const useSacolaStore = defineStore('sacola', {
 
     state: () => ({
         sacola: [],
+        change: false
     }),
     getters: {
         isSacola: (state) => (id) => {
@@ -33,6 +34,7 @@ export const useSacolaStore = defineStore('sacola', {
 
                 this.sacola.splice(index, 1)
                 console.log("removido", this.sacola)
+                this.change = !this.change
                 this.persistState()
             }
         },

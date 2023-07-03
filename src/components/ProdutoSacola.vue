@@ -3,16 +3,19 @@
 
   <v-col cols="12" sm="12">
     <v-card>
+
   <v-row v-for="item in produto"
   :key="item.id"
   >
+
     <v-col cols="12" sm="2">
       <v-img
-          max-width="150"
+          max-width="1000"
       :src="item.fotosDoProduto"
       ></v-img>
 
     </v-col>
+
     <v-col cols="12" sm="4"
     class="align-center"
     >
@@ -24,16 +27,20 @@
       </v-row>
 
     </v-col>
+
     <v-col cols="12" sm="2">
 
       {{formataValor(item.valorAtual)}}
     </v-col>
 
     <v-col cols="12" sm="2" class="d-flex justify-end">
-      <v-icon color="red" large>mdi-delete-outline</v-icon>
+      <v-icon
+          @click="removerSacola(item.id)"
+          color="red" large>mdi-delete-outline</v-icon>
     </v-col>
 
   </v-row>
+
       <v-divider></v-divider>
     </v-card>
   </v-col>
@@ -43,12 +50,19 @@
 </template>
 
 <script>
+import {useSacolaStore} from "@/store/sacolaStore";
+
 export default {
   name: "ProdutoSacola",
 
   methods:{
     formataValor(valor) {
       return valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+    },
+
+    removerSacola(id) {
+      useSacolaStore().removerSacola(id)
+      console.log(id+'removeu')
     }
 
   },

@@ -88,10 +88,12 @@
 
 <script>
 import MainLayout from '@/components/main-layout';
-//import {useSacolaStore} from "@/store/sacolaStore";
+
 import ProdutoClient from "../clients/produto-client"
-import {useFavoritosStore} from "@/store/store";
+
 import ProdutoSacola from "@/components/ProdutoSacola";
+import {useSacolaStore} from "@/store/sacolaStore";
+
 
 export default {
   name: "sacolaCompras",
@@ -111,10 +113,30 @@ export default {
     vazio: true,
     quantidade: ''
   }),
+
+  computed:{
+    recarregaPagina(){
+      return useSacolaStore().change
+    }
+
+  },
+
+
+  watch:{
+    recarregaPagina: function () {
+      this.produtos = []
+      this.findById()
+    }
+
+  },
+
   created: function () {
 
     this.findById()
-
+window.addEventListener('useSacolaStore', this.handleuseSacolaStoreChange)
+  },
+  beforeDestroy() {
+    window.removeEventListener('useSacolaStore', this.handleuseSacolaStoreeChange);
   },
 
 
@@ -123,12 +145,10 @@ export default {
       return valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
     },
 
-
-
     async findById() {
 
       const getApi = new ProdutoClient();
-      const valor = useFavoritosStore().listaFavoritos
+      const valor = useSacolaStore().listaSacola
       console.log(valor)
 
       valor.map((valor) => {
@@ -144,26 +164,6 @@ export default {
         })
       })
     },
-
-    // async findById(){
-    //
-    //
-    //   const valor = useSacolaStore().listaSacola
-    //   console.log(valor)
-    //
-    //   valor.map((valor) => {
-    //
-    //     this.ProdutoClient.findById(valor).then((produto) => {
-    //       this.produtos.push(produto)
-    //     this.quantidade=  this.produtos.length
-    //
-    //     }).catch((error) =>{
-    //       console.log(error);
-    //     })
-    //
-    // })},
-
-
   },
   mounted: function () {
     // this.adicionaProdutos();
