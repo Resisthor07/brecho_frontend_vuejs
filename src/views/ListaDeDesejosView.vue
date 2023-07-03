@@ -47,24 +47,38 @@ export default {
   data: () => ({
 
     produtos: [],
+    controle:'',
     vazio: true,
     quantidade: 0
   }),
 
+  computed:{
+
+    recarregaPagina(){
+      return useFavoritosStore().change
+    }
+
+
+  },
+
   watch: {
 
-   recarregaPagina: function (newVal) {
-     console.log(newVal)
-       this.findById()
+    recarregaPagina: function () {
+      this.produtos = []
+      this.findById()
+    }
   }
-  },
+,
 
   created: function () {
 
     this.findById()
+    this.controle = this.produtos.length
 
-
-
+    window.addEventListener('useFavoritosStore', this.handleFavoritosStoreChange);
+  },
+  beforeDestroy() {
+    window.removeEventListener('useFavoritosStore', this.handleFavoritosStoreChange);
   },
 
 
@@ -85,11 +99,14 @@ export default {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
 
+
         }).catch((error) =>{
           console.log(error);
         })
 
     })},
+
+
 
     // adicionaProdutos() {
     //
