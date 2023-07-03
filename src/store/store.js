@@ -4,6 +4,7 @@ export const useFavoritosStore = defineStore('favoritos', {
 
     state: () => ({
         favoritos: [],
+        change: false
     }),
     getters: {
         isFavorite: (state) => (id) => {
@@ -32,6 +33,8 @@ export const useFavoritosStore = defineStore('favoritos', {
             if ( index> -1) {
 
                 this.favoritos.splice(index, 1)
+                this.change = !this.change
+
                 console.log("removido", this.favoritos)
                 this.persistState()
             }
