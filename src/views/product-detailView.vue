@@ -52,13 +52,48 @@
 
 <script>
 import MainLayout from '@/components/main-layout';
+import ProdutoClient from "@/clients/produto-client";
 //import ProdutoClient from '@/clients/produto-client';
 
 export default {
     name: "ProductDetail",
     components: {
         MainLayout
+    },
+
+  data: () => ({
+    produto: '',
+
+  computed:{
+      produtoId(){
+      return this.$route.query.id;
     }
+  },
+
+
+  created(){
+
+    this.findById(this.produtoId);
+
+  },
+
+    methods:{
+      async findById(id){
+        const getApi = new ProdutoClient();
+
+        this.produto = await getApi.findById(id);
+        console.log(this.produto);
+
+      }
+    }
+
+
+  })
+
+
+
+
+
 }
 </script>
 

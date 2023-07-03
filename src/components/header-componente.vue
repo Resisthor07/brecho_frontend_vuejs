@@ -65,19 +65,25 @@
 
 <script>
 import {mdiShoppingOutline} from '@mdi/js';
+//import {useSacolaStore} from "@/store/sacolaStore";
+import {useFavoritosStore} from "@/store/store";
 
 export default {
   name: 'App',
   components: {},
-  methods: {
-    click: function () {
-      console.log("teste")
+
+
+
+  computed: {
+    TamanhoLista() {
+      let contaitens = useFavoritosStore().listaFavoritos.length
+      return contaitens
     }
   },
 
   data: () => ({
     mdiShoppingOutline,
-    contaitens: 10,
+    contaitens: 0,
     menus: [{
       nome: "calças"
     },
@@ -93,6 +99,22 @@ export default {
       {nome: "Acessórios"}
     ]
   }),
+
+  watch: {
+    ListaDeProdutos() {
+      this.contaitens = useFavoritosStore().listaFavoritos.length
+    }
+  },
+  methods: {
+    click: function () {
+      console.log("teste")
+    },
+
+
+
+
+
+  },
 };
 </script>
 <style>

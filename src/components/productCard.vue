@@ -35,7 +35,7 @@
       >{{ produto.nome }}</v-card-title>
       <v-card-title>{{ formataValor(produto.valorAtual)}}</v-card-title>
 
-      
+
 
       </router-link>
 

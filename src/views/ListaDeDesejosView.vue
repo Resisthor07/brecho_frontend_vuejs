@@ -81,11 +81,7 @@ export default {
     window.removeEventListener('useFavoritosStore', this.handleFavoritosStoreChange);
   },
 
-
   methods: {
-
-
-
 
     async    findById(){
 
