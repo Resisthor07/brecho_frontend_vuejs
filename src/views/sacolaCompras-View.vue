@@ -66,7 +66,7 @@
         <v-col cols="4" class=" d-flex flex-column align-center">
          
        
-          <h1 class="mb-5"> Resumo da Compra</h1>
+          <h1  v-if="!vazio" class="mb-5"> Resumo da Compra</h1>
           
           <v-row justify="space-between" class="mt-5 ">
             <v-col cols="12">
@@ -86,7 +86,7 @@
                     <span>Desconto:</span>
                   </v-col>
                   <v-col >
-                    <span>R$ -10,00</span>
+                    <span>R$ - {{ desconto }}</span>
                   </v-col>
                 </v-row>
 
@@ -183,6 +183,7 @@ export default {
     quantidade: 0,
     produtoClient: new ProdutoClient(),
     subTotal: 0,
+    desconto: 0,
   }),
   created: function () {
     console.log(this.quantidade)
@@ -191,25 +192,26 @@ export default {
   },
   methods: {
 
-    async findById(){
+    async findById() {
+  const valor = useSacolaStore().listaSacola;
+  console.log(valor);
 
-      
-      const valor = useSacolaStore().listaSacola
-      console.log(valor)
+  valor.map((valor) => {
+    this.ProdutoClient.findById(valor)
+      .then((produto) => {
+        this.produtos.push(produto);
+        this.quantidade = this.produtos.length;
+        this.subTotal += this.produto.valorAtual;
+        this.desconto += this.produto.valorAnterior - this.produto.valorAtual;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
-      valor.map((valor) => {
-
-        this.ProdutoClient.findById(valor).then((produto) => {
-          this.produtos.push(produto)
-        this.quantidade=  this.produtos.length
-        this.subTotal += this.produto.valorAtual
-
-
-        }).catch((error) =>{
-          console.log(error);
-        })
-
-    })},
+  // Verifica se a sacola está vazia
+  this.vazio = this.produtos === undefined || this.produtos.length === 0;
+},
 
    
   },
