@@ -89,7 +89,7 @@
 <script>
 import MainLayout from '@/components/main-layout';
 //import {useSacolaStore} from "@/store/sacolaStore";
-import ProdutoClient from "../clients/produto-client"
+import {ProdutoClient} from "../clients/produto-client"
 import {useFavoritosStore} from "@/store/store";
 import ProdutoSacola from "@/components/ProdutoSacola";
 
