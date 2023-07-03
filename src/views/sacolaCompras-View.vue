@@ -29,9 +29,9 @@
         </v-col>
       </v-row>
 
-      <v-col >
+      <v-col  v-for="item in produtos" :key="item.id" >
 
-        <v-col v-for="item in produtos" :key="item.id" cols="8"
+        <v-col cols="8"
         sm="8">
           <v-col cols="5"
           sm="6"> 
@@ -77,7 +77,7 @@
                     <span>Subtotal:</span>
                   </v-col>
                   <v-col >
-                    <span>R$ 80,00</span>
+                    <span>R$ {{subTotal}}</span>
                   </v-col>
                 </v-row>
 
@@ -181,7 +181,8 @@ export default {
     produtos: [],
     vazio: true,
     quantidade: 0,
-    produtoClient: new ProdutoClient()
+    produtoClient: new ProdutoClient(),
+    subTotal: 0,
   }),
   created: function () {
     console.log(this.quantidade)
@@ -201,6 +202,8 @@ export default {
         this.ProdutoClient.findById(valor).then((produto) => {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
+        this.subTotal += this.produto.valorAtual
+
 
         })
 
