@@ -51,6 +51,12 @@ const routes = [
         component: sacolaCompras
 
     },
+    {
+
+        path: '/cliente-cadastro',
+        name: 'cliente-cadastro',
+        component: () => import('@/views/CadastroClienteView')
+    },
     //Samir
     {
         path: '/administrador',

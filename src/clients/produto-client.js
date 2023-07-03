@@ -7,7 +7,7 @@ export default class ProdutoClient {
 
     constructor() {
         this.axiosCliente = axios.create({
-            baseURL: 'http://localhost:8090/api/produto',
+            baseURL: 'http://localhost:8087/api/produto',
             headers: {'Content-Type': 'application/json'}
         });
     }

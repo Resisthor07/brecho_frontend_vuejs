@@ -58,7 +58,13 @@ export default {
     name: "ProductDetail",
     components: {
         MainLayout
-    }
+    },
+  computed:{
+
+  },
+
+
+
 }
 </script>
 
