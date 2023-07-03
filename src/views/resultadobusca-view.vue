@@ -3,10 +3,10 @@
     <header-componente></header-componente>
     <v-main>
       <div class="div_buscav">
-        <p class="caminho_buscav">Home / {{ consulta }}</p>
+        <p class="caminho_buscav dongle-regular f30 c313">Home / {{ consulta }}</p>
       </div>
       <span></span>
-      <resultado-busca-componente  :produtos="produtos" ></resultado-busca-componente>
+      <resultado-busca-componente :vazio="vazio" :consulta="consulta" :produtos="produtos" ></resultado-busca-componente>
     </v-main>
     <footer-componente></footer-componente>
   </v-app>
@@ -102,18 +102,11 @@ export default {
 
 <style scoped>
 
-
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
-
 .caminho_buscav {
-  font-family: 'Dongle';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
+  
   margin-left: 60px;
   margin-bottom: 0px;
 
-  color: #313131;
 }
 
 .div_buscav {
@@ -123,9 +116,5 @@ export default {
   align-items: center;
 }
 
-    .container_buscav
-    {
-        margin: 0px;
-        padding: 0px;
-    }
+    
 </style>
