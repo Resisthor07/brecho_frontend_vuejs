@@ -1,7 +1,8 @@
 <template>
 <v-container>
 
-  <v-col cols="12" sm="6">
+  <v-col cols="12" sm="12">
+    <v-card>
   <v-row v-for="item in produto"
   :key="item.id"
   >
@@ -12,7 +13,9 @@
       ></v-img>
 
     </v-col>
-    <v-col cols="12" sm="4">
+    <v-col cols="12" sm="4"
+    class="align-center"
+    >
       <v-row      >
         {{item.nome}}
       </v-row>
@@ -25,8 +28,14 @@
 
       {{formataValor(item.valorAtual)}}
     </v-col>
-  </v-row>
 
+    <v-col cols="12" sm="2" class="d-flex justify-end">
+      <v-icon color="red" large>mdi-delete-outline</v-icon>
+    </v-col>
+
+  </v-row>
+      <v-divider></v-divider>
+    </v-card>
   </v-col>
   <v-divider></v-divider>
 
