@@ -29,9 +29,9 @@
         </v-col>
       </v-row>
 
-      <v-col v-for="item in produtos" :key="item.id">
+      <v-col >
 
-        <v-col cols="8"
+        <v-col v-for="item in produtos" :key="item.id" cols="8"
         sm="8">
           <v-col cols="5"
           sm="6"> 
@@ -90,14 +90,6 @@
                   </v-col>
                 </v-row>
 
-                <v-row cols="10" class="mb-2">
-                  <v-col>
-                    <span>Frete:</span>
-                  </v-col>
-                  <v-col>
-                    <span>R$ 10,00</span>
-                  </v-col>
-              </v-row>
 
       <v-divider color="black" class="border-opacity-100 mt-5"></v-divider>
 
@@ -112,7 +104,7 @@
                   
                   class="text-center">
                   <div  cols="6" class="text-center">
-                    <router-link :to="{name:'ProductDetail', params:{listaSacola: this.produtos} }">
+                    <router-link :to="{name:'checkout-pagamento', params:{listaSacola: this.produtos} }">
                       <v-btn
                         rounded
                         color="primary"
@@ -133,22 +125,24 @@
                   class="text-center">
                     <div cols="6"  class="text-center">
                       <v-sheet>
-                      <v-btn
-                      class="btn-compra borda-padrao w-100"
-                        rounded
-                        color="primary"
-                        dark
-                        sm="3"
-                        
-                      >
-                      <v-icon
-                        dark
-                        left
-                      >
-                        mdi-arrow-left
-                      </v-icon>
-                      Continuar Comprando
-                      </v-btn>
+                      <router-link :to="{name:'home'}">
+                        <v-btn
+                        class="btn-compra borda-padrao w-100"
+                          rounded
+                          color="primary"
+                          dark
+                          sm="3"
+                          
+                        >
+                        <v-icon
+                          dark
+                          left
+                        >
+                          mdi-arrow-left
+                        </v-icon>
+                        Continuar Comprando
+                        </v-btn>
+                      </router-link>
                     </v-sheet>
                             
                                 
@@ -176,7 +170,7 @@
 <script>
 import MainLayout from '@/components/main-layout';
 import {useSacolaStore} from "@/store/sacolaStore";
-import {ProdutoClient} from "../clients/produto-client"
+import {ProdutoClient} from "@/clients/produto-client"
 
 export default {
   name: "sacolaCompras",
