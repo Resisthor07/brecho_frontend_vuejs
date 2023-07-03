@@ -14,14 +14,22 @@
             </div>
               <div class="titulo_sacola">
                 <span class="titulo_desejo">Sacola de Compras</span>
-                <span class="titulo_desejo" font-size="2px">4 items adicionado(s) a sacola</span>
+                <span class="titulo_desejo" font-size="2px"> {{quantidade}} items adicionado(s) a sacola</span>
               </div>
         </v-col>
       </v-row>
 
       <v-divider :thickness="5" color="black" class="border-opacity-100"> </v-divider>
 
-      <v-col v-for="item in produtos" :key="item.id">
+      <v-row >
+        <v-col class="col_desejo d-flex justify-center ">
+          <span class="c313 dongle-light f35 " >{{
+              this.quantidade
+            }} items adicionado(s) Sacola</span>
+        </v-col>
+      </v-row>
+
+      <v-col  v-for="item in produtos" :key="item.id" >
 
         <v-col cols="8"
         sm="8">
@@ -69,7 +77,7 @@
                     <span>Subtotal:</span>
                   </v-col>
                   <v-col >
-                    <span>R$ 80,00</span>
+                    <span>R$ {{subTotal}}</span>
                   </v-col>
                 </v-row>
 
@@ -82,14 +90,6 @@
                   </v-col>
                 </v-row>
 
-                <v-row cols="10" class="mb-2">
-                  <v-col>
-                    <span>Frete:</span>
-                  </v-col>
-                  <v-col>
-                    <span>R$ 10,00</span>
-                  </v-col>
-              </v-row>
 
       <v-divider color="black" class="border-opacity-100 mt-5"></v-divider>
 
@@ -104,7 +104,7 @@
                   
                   class="text-center">
                   <div  cols="6" class="text-center">
-                    <router-link :to="{name:'ProductDetail', params:{listaSacola: this.produtos} }">
+                    <router-link :to="{name:'checkout-pagamento', params:{listaSacola: this.produtos} }">
                       <v-btn
                         rounded
                         color="primary"
@@ -125,22 +125,24 @@
                   class="text-center">
                     <div cols="6"  class="text-center">
                       <v-sheet>
-                      <v-btn
-                      class="btn-compra borda-padrao w-100"
-                        rounded
-                        color="primary"
-                        dark
-                        sm="3"
-                        
-                      >
-                      <v-icon
-                        dark
-                        left
-                      >
-                        mdi-arrow-left
-                      </v-icon>
-                      Continuar Comprando
-                      </v-btn>
+                      <router-link :to="{name:'home'}">
+                        <v-btn
+                        class="btn-compra borda-padrao w-100"
+                          rounded
+                          color="primary"
+                          dark
+                          sm="3"
+                          
+                        >
+                        <v-icon
+                          dark
+                          left
+                        >
+                          mdi-arrow-left
+                        </v-icon>
+                        Continuar Comprando
+                        </v-btn>
+                      </router-link>
                     </v-sheet>
                             
                                 
@@ -168,7 +170,7 @@
 <script>
 import MainLayout from '@/components/main-layout';
 import {useSacolaStore} from "@/store/sacolaStore";
-import {ProdutoClient} from "../clients/produto-client"
+import {ProdutoClient} from "@/clients/produto-client"
 
 export default {
   name: "sacolaCompras",
@@ -176,13 +178,14 @@ export default {
     MainLayout    
 },
   data: () => ({
-    ProdutoClient: new ProdutoClient(),
     produtos: [],
     vazio: true,
-    quantidade: 0
+    quantidade: 0,
+    produtoClient: new ProdutoClient(),
+    subTotal: 0,
   }),
   created: function () {
-
+    console.log(this.quantidade)
     this.findById()
 
   },
@@ -199,6 +202,8 @@ export default {
         this.ProdutoClient.findById(valor).then((produto) => {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
+        this.subTotal += this.produto.valorAtual
+
 
         }).catch((error) =>{
           console.log(error);
