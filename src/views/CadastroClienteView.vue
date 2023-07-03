@@ -185,6 +185,8 @@ export default {
         this.resposta = response.data
         this.erros = []
         this.alerta = true;
+        this.$router.push({name:'/pagamento', params: {id: response.data.id}})
+
       }).catch(response => {
         this.erros = response.data
 
