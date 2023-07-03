@@ -24,7 +24,7 @@
                         placerat neque sem, interdum pretium massa
                         euismod id. Donec gravida laoreet mollis.
                     </p>
-                    
+
                     <v-col class="row">
                         <v-col cols="6" class="px-3">
                             <v-sheet>
@@ -34,14 +34,16 @@
                                 </button>
                             </v-sheet>
                         </v-col>
-                        <v-col cols="6" class="px-3">
-                            <button class="btn-compra borda-padrao dongle-regular f25 c313">
-                                <v-icon>mdi-plus-circle-outline</v-icon>
-                                Add to cart
-                            </button>
-                        </v-col>
+                        <router-link>
+                            <v-col cols="6" class="px-3">
+                                <button class="btn-compra borda-padrao dongle-regular f25 c313">
+                                    <v-icon>mdi-plus-circle-outline</v-icon>
+                                    Add to cart
+                                </button>
+                            </v-col>
+                        </router-link>
                     </v-col>
-                
+
                 </v-col>
             </v-row>
         </v-container>

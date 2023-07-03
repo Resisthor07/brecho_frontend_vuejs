@@ -168,16 +168,15 @@
 <script>
 import MainLayout from '@/components/main-layout';
 import {useSacolaStore} from "@/store/sacolaStore";
-import {ProdutoClient} from "@/clients/produto-client"
+import {ProdutoClient} from "../clients/produto-client"
 
 export default {
   name: "sacolaCompras",
   components: {
-    MainLayout,
-    
+    MainLayout    
 },
   data: () => ({
-
+    ProdutoClient: new ProdutoClient(),
     produtos: [],
     vazio: true,
     quantidade: 0
@@ -191,13 +190,13 @@ export default {
 
     async findById(){
 
-      const getApi = new ProdutoClient();
+      
       const valor = useSacolaStore().listaSacola
       console.log(valor)
 
       valor.map((valor) => {
 
-        getApi.findById(valor).then((produto) => {
+        this.ProdutoClient.findById(valor).then((produto) => {
           this.produtos.push(produto)
         this.quantidade=  this.produtos.length
 
