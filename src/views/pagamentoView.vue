@@ -77,7 +77,9 @@ export default {
         listaProdutos() {
             return this.$store.state.listaProdutos
         },
-
+        cliente(){
+            return this.$route.query.id
+        }
 
     },
     methods: {
@@ -86,6 +88,7 @@ export default {
                 .then(response => {
                     this.venda.pagamento = this.selectPagamento;
                     this.venda.produtos = this.listaProdutos;
+                    this.venda.cliente = this.cliente();
                     console.log(response);  
                 }).catch (error => {
                     console.log(error);
