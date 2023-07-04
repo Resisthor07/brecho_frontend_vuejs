@@ -76,7 +76,7 @@
           </v-row>
           <v-divider class="mt-3" color="black"></v-divider>
           <v-row class="ml-3 mt-5 d-flex justify-space-between">
-            <h5 >Valor Totla </h5>
+            <h5 >Valor Total </h5>
 
             <h5>  {{ formataValor(this.frete+ this.valorTotal - this.Desconto) }}</h5>
           </v-row>
@@ -130,7 +130,7 @@ export default {
 
   data: () => ({
 
-    valorTotal: 0,
+    valorTotal: 0.0,
     Desconto: 0,
     frete: 0,
     ProdutoClient: new ProdutoClient(),
@@ -182,9 +182,10 @@ window.addEventListener('useSacolaStore', this.handleuseSacolaStoreChange)
 
         getApi.findById(valor).then((produto) => {
           this.produtos.push(produto)
+          console.log(this.produtos)
           this.quantidade = this.produtos.length
           console.log(this.produtos.valorAtual)
-          this.valorTotal = this.valorTotal + this.produtos.valorAtual
+          this.valorTotal = this.valorTotal + produto.valorAtual
 
         }).catch((error) => {
           console.log(error);

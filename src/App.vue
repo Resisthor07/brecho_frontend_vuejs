@@ -7,6 +7,7 @@
 
 <script>
 import {useFavoritosStore} from "@/store/store";
+import {useSacolaStore} from "@/store/sacolaStore";
 //import {DongleRegular} from "@/assets/fonts/Dongle/DongleRegular.ttf";
 
 
@@ -15,6 +16,7 @@ export default {
 
   created() {
     useFavoritosStore().restoreState()
+    useSacolaStore().restoreState()
   }
 }
 
