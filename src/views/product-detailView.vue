@@ -24,14 +24,29 @@
                     }}
                     </p>
 
-                    <v-col class="row">
-                        <v-col cols="12" class="px-0">
-                            <v-sheet>
-                                <button @click="adicionarAoCarrinho()" class="btn-compra borda-padrao d-flex justify-center align-center">
-                                    <v-icon>mdi-plus-circle-outline</v-icon>
-                                    <p class="dongle-light f25 c313 ma-0" style="line-height: none;">Adicionar ao carrinho</p>
-                                </button>
-                            </v-sheet>
+
+                        <v-col  class="d-flex flex-column align-center">
+
+                                <v-btn
+                                    color="success"
+                                    max-width="300"
+                                    @click="adicionarAoCarrinho()">
+
+
+                                    <v-icon
+                                    class="mr-5"
+                                    >mdi-plus-circle-outline</v-icon>
+                                  Adicionar ao carrinho
+                                </v-btn>
+                              <router-link to="/">
+                              <v-btn
+                                  class="mt-5"
+                                  min-width="290"
+
+                              color="primary"
+                              >Continuar comprando</v-btn>
+                              </router-link>
+
                         </v-col>
 
                         <!-- <v-col cols="6" class="px-3">
@@ -43,8 +58,18 @@
 
                     </v-col>
 
-                </v-col>
+
             </v-row>
+          <v-snackbar
+              color="success"
+              class="d-flex justify-center"
+              v-model="snackbar"
+              :timeout="timeout"
+          >
+            {{ text }}
+
+
+          </v-snackbar>
         </v-container>
     </main-layout>
 </template>
@@ -63,6 +88,10 @@ export default {
 
     data: () => ({
         produto: Object,
+
+      snackbar: false,
+      text: 'Adicionado a sacola de compras.',
+      timeout: 2000,
     }),
 
     computed: {
@@ -96,6 +125,7 @@ export default {
         adicionarAoCarrinho: function () {
             useSacolaStore().adionarSacola(this.produto.id)
             console.log(this.produto.id + 'adicinado')
+          this.snackbar=true
         }
     }
 

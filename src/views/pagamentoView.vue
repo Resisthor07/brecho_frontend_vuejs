@@ -137,7 +137,7 @@ export default {
 
       postApi.cadastrar(this.venda)
           .then(response => {
-            this.$router.push('pedidoFinalizado')
+            this.$router.push('/pedidoFinalizado')
 
             console.log(response);
           }).catch(error => {

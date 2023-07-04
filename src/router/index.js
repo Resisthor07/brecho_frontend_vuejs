@@ -62,7 +62,7 @@ const routes = [
 
     {
         path: '/pedidoFinalizado',
-        name: 'finalizado',
+        name: 'pedidoFinalizado',
         component: () => import('@/views/PedidoGravado.vue')
     }
     //samir

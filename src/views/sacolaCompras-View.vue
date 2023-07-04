@@ -56,19 +56,19 @@
           <h3
           class="d-flex justify-center mb-16"
           > Resumo da Compra</h3>
-          <v-row class="ml-3 d-flex justify-space-between">
+          <v-row class="ml-3 d-flex justify-space-between fonte">
             <h5 >Subtotal </h5>
 
             <h5>  {{ formataValor(this.valorTotal) }}</h5>
 
           </v-row>
-          <v-row class="ml-3 mt-5 justify-space-between">
+          <v-row class="ml-3 mt-5 justify-space-between fonte">
             <h5 >Desconto </h5>
 
             <h5>  {{ formataValor(this.Desconto) }}</h5>
 
           </v-row>
-          <v-row class="ml-3 mt-5 d-flex justify-space-between">
+          <v-row class="ml-3 mt-5 d-flex justify-space-between fonte">
             <h5 >Frete </h5>
 
             <h5>  {{ formataValor(this.frete) }}</h5>
@@ -204,6 +204,12 @@ window.addEventListener('useSacolaStore', this.handleuseSacolaStoreChange)
 </script>
 
 <style scoped lang="scss">
+
+.fonte{
+
+  font-size: large;
+  font-weight: lighter;
+}
 
 .titulo_sacola {
   align-items: flex-start;

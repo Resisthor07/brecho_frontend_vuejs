@@ -20,7 +20,7 @@
     </v-col>
 
     <v-col cols="12" sm="4"
-    class="mt-8 align-center flex-column justify-space-between"
+    class="mt-4 fonte align-center flex-column justify-space-between"
     >
       <v-row
 
@@ -34,7 +34,7 @@
     </v-col>
 
     <v-col cols="12" sm="2"
-           class="mt-8 align-center flex-column justify-space-between"
+           class="mt-3 fonte align-center flex-column justify-space-between"
     >
 
       {{formataValor(produto.valorAtual)}}
@@ -89,5 +89,7 @@ export default {
 </script>
 
 <style scoped>
-
+.fonte{
+  font-size: large;
+}
 </style>
