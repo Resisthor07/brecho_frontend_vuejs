@@ -2,7 +2,7 @@
 <v-card>
 
   <v-img
-
+      src="../assets/logo.png"
   ></v-img>
 </v-card>
 </template>
