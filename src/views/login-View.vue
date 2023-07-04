@@ -1,5 +1,4 @@
 
-import { mdiFormTextboxPassword } from '@mdi/js';
 
 <template>
 
@@ -42,6 +41,7 @@ import { mdiFormTextboxPassword } from '@mdi/js';
 
         </v-col >
 
+        
           <v-btn 
             width="12vw"
             height="7vh"
@@ -50,10 +50,9 @@ import { mdiFormTextboxPassword } from '@mdi/js';
             justify="center"
             align-items="center"
             class="mr-4"
-            @click="submit">
+            @click="openNewWindow">
                 ENTRAR
           </v-btn>
-       
 
       </v-row>
         
@@ -76,7 +75,12 @@ export default {
         }
       
     };
-  },
+  }, 
+  methods: {
+    openNewWindow() {
+      window.open('http://localhost:3000/pedidos', '_blank')
+    }
+  }
 };
 </script>
 
