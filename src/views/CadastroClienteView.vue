@@ -182,7 +182,7 @@ export default {
         cadastrar() {
             let apiCliente = new ClienteClient();
 
-      apiCliente.cadastrar(this.cliente).then(response => {
+      apiCliente.cadastrarCliente(this.cliente).then(response => {
 
         this.resposta = 'Cadastro realizado com sucesso!'
 
@@ -190,13 +190,10 @@ export default {
         this.erros='Cadastro realizado com sucesso!'
 
 
-        this.$router.push({name:'/pagamento', params: {id: this.ClienteId}})
+        this.$router.push({name:'checkoutpagamento', params: {id: this.ClienteId}})
 
       }).catch(response => {
-        if(response.data !== null){
-          this.erros  = []
-;        }
-        this.erros = response.data;
+        this.erros = response.data
 
 
 

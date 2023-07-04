@@ -29,8 +29,8 @@
           <router-link to="sacola">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
-              <span v-if="this.contaitens <= 1" class="text--accent-2 ">{{ contaitens }} Item</span>
-              <span v-if="this.contaitens > 1" class="text--accent-2 ">{{ contaitens }} Itens</span>
+              <span v-if="this.checaMudanca < 1" class="text--accent-2 ">{{ checaMudanca }} Item</span>
+              <span v-if="this.checaMudanca > 1" class="text--accent-2 ">{{ checaMudanca }} Itens</span>
             </v-btn>
           </router-link>
           <router-link to="/lista-de-desejos">
@@ -65,21 +65,12 @@
 
 <script>
 import {mdiShoppingOutline} from '@mdi/js';
-//import {useSacolaStore} from "@/store/sacolaStore";
-import {useFavoritosStore} from "@/store/store";
+
+import {useSacolaStore} from "@/store/sacolaStore";
 
 export default {
   name: 'App',
   components: {},
-
-
-
-  computed: {
-    TamanhoLista() {
-      let contaitens = useFavoritosStore().listaFavoritos.length
-      return contaitens
-    }
-  },
 
   data: () => ({
     mdiShoppingOutline,
@@ -100,9 +91,15 @@ export default {
     ]
   }),
 
+  computed: {
+    checaMudanca() {
+      return useSacolaStore().listaSacola.length
+    }
+  },
+
   watch: {
     ListaDeProdutos() {
-      this.contaitens = useFavoritosStore().listaFavoritos.length
+      this.contaitens = useSacolaStore().listaSacola.length
     }
   },
   methods: {

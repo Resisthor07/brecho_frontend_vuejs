@@ -25,6 +25,7 @@ export const useSacolaStore = defineStore('sacola', {
                 this.sacola.push(id)
                 console.log("adicionado", this.sacola)
                 this.persistState()
+                this.change = !this.change
             }
         },
 

@@ -58,8 +58,6 @@ export default {
     recarregaPagina(){
       return useFavoritosStore().change
     }
-
-
   },
 
   watch: {
@@ -69,8 +67,7 @@ export default {
       this.findById()
       this.quantidade = this.produtos.length
     }
-  }
-,
+  },
 
   created: function () {
 
@@ -86,7 +83,6 @@ export default {
   methods: {
 
     async    findById(){
-
       const getApi = new ProdutoClient();
       const valor = useFavoritosStore().listaFavoritos
       console.log(valor)

@@ -9,9 +9,9 @@ export default class ClienteClient {
         this.axiosCliente = axios.create({ baseURL: 'http://localhost:8087/api/cliente', headers:{'Content-Type': 'application/json'}});
     }
 
-     async cadastrar(cliente) {
+     async cadastrarCliente(cliente) {
          try {
-             return(await this.axiosCliente.post('addCliente', cliente ))
+             return(await this.axiosCliente.post('/addCliente', cliente ))
 
          }
          catch (error){

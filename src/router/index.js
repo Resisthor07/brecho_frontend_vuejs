@@ -30,8 +30,8 @@ const routes = [
         component: ProductDetail
     },
     {
-        path: '/pagamento',
-        name: 'checkout-pagamento',
+        path: '/pagamento/:id',
+        name: 'checkoutpagamento',
         component: Pagamento
     },
     {
