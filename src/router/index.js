@@ -58,10 +58,12 @@ const routes = [
         component: () => import('@/views/CadastroClienteView')
     },
     //Samir
+
+
     {
-        path: '/administrador',
-        name: 'administrador',
-        component: () => import('@/views/PaginaAdm.vue')
+        path: '/pedidoFinalizado',
+        name: 'finalizado',
+        component: () => import('@/views/PedidoGravado.vue')
     }
     //samir
 ]

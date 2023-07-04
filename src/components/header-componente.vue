@@ -15,21 +15,21 @@
           />
           </router-link>
         </v-col>
-        <v-col>
-          <v-text-field class="borda"
-                        outlined
-                        label="Busque aqui..."
-                        color="primary"
-                        rounded
-                        dense
-                        hide-details="true"
-          ></v-text-field>
-        </v-col>
+<!--        <v-col>-->
+<!--          <v-text-field class="borda"-->
+<!--                        outlined-->
+<!--                        label="Busque aqui..."-->
+<!--                        color="primary"-->
+<!--                        rounded-->
+<!--                        dense-->
+<!--                        hide-details="true"-->
+<!--          ></v-text-field>-->
+<!--        </v-col>-->
         <v-col align="right">
           <router-link to="sacola">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
-              <span v-if="this.checaMudanca < 1" class="text--accent-2 ">{{ checaMudanca }} Item</span>
+              <span v-if="this.checaMudanca <= 1" class="text--accent-2 ">{{ checaMudanca }} Item</span>
               <span v-if="this.checaMudanca > 1" class="text--accent-2 ">{{ checaMudanca }} Itens</span>
             </v-btn>
           </router-link>
@@ -52,8 +52,8 @@
             :to="{name: 'resultados', params:{ tipo: item.nome}}">
         <v-btn
             elevation="0"
-
-            width="20%" height="45" color="primary t">
+            class="text--white"
+            width="20%" height="45" color="primary" >
           {{ item.nome }}
         </v-btn>
         </router-link>

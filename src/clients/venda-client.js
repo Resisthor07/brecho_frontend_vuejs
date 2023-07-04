@@ -12,9 +12,9 @@ export default class VendaClient {
         });
     }
 
-    async cadastrar(cliente) {
+    async cadastrar(venda) {
         try {
-            return (await this.axiosCliente.post('', cliente))
+            return (await this.axiosCliente.post('', venda))
         }
         catch (error) {
             return Promise.reject(error.response)
