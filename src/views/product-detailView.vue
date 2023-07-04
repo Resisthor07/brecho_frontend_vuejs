@@ -8,21 +8,20 @@
                     </div>
                 </v-col>
                 <v-col cols="12" lg="6" class="d-flex flex-column justify-center align-start">
-                    <p class="dongle-regular f40 c313 my-0">Camiseta preta em algodão</p>
+                    <p class="dongle-regular f40 c313 my-0">{{ produto.nome }}</p>
 
                     <article class="d-flex flex-row w-100 dongle-light f27 c313">
                         <p class="c313 mr-5 my-0">Condição: NOVO</p>
-                        <p class="c313 my-0">Tam.: M</p>
+                        <p class="c313 my-0">Tam.: {{ produto.tamanho }}</p>
                     </article>
 
-                    <p class="dongle-regular c313 f35">R$149,49</p>
+                    <p class="dongle-regular c313 f35">{{ produto.valorAtual }}</p>
 
                     <div class="borda-padrao" style="width: 100%; border-radius: 50%;"></div>
 
                     <p class="dongle-regular c313 f30">Descrição:</p>
-                    <p class="dongle-light c313 f25 text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                        placerat neque sem, interdum pretium massa
-                        euismod id. Donec gravida laoreet mollis.
+                    <p class="dongle-light c313 f25 text-left">
+                        {{ produto.descricao }}
                     </p>
 
                     <v-col class="row">
@@ -61,34 +60,27 @@ export default {
         MainLayout
     },
 
-  data: () => ({
-    produto: '',
+    data: () => ({
+        produto: '',
 
-  computed:{
-      produtoId(){
-      return this.$route.query.id;
-    }
-  },
+        computed: {
+            produtoId() {
+                return this.$route.query.id;
+            }
+        },
+        created() {
+            this.findById(this.produtoId);
+        },
+        methods: {
+            async findById(id) {
+                const getApi = new ProdutoClient();
 
+                this.produto = await getApi.findById(id);
+                console.log(this.produto);
 
-  created(){
-
-    this.findById(this.produtoId);
-
-  },
-
-    methods:{
-      async findById(id){
-        const getApi = new ProdutoClient();
-
-        this.produto = await getApi.findById(id);
-        console.log(this.produto);
-
-      }
-    }
-
-
-  })
+            }
+        }
+    })
 
 
 
