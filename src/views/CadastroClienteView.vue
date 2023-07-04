@@ -153,6 +153,7 @@ export default {
     }
   },
   data: () => ({
+    ClienteId: '',
     myImputModel: '',
     imputCEP: '',
     alerta: false,
@@ -182,13 +183,21 @@ export default {
             let apiCliente = new ClienteClient();
 
       apiCliente.cadastrar(this.cliente).then(response => {
-        this.resposta = response.data
-        this.erros = []
-        this.alerta = true;
-        this.$router.push({name:'/pagamento', params: {id: response.data.id}})
+
+        this.resposta = 'Cadastro realizado com sucesso!'
+
+        this.ClienteId = response.data;
+        this.erros='Cadastro realizado com sucesso!'
+
+
+        this.$router.push({name:'/pagamento', params: {id: this.ClienteId}})
 
       }).catch(response => {
-        this.erros = response.data
+        if(response.data !== null){
+          this.erros  = []
+;        }
+        this.erros = response.data;
+
 
 
       });

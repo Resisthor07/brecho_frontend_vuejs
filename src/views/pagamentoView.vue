@@ -76,7 +76,9 @@ export default {
     computed: {
         listaProdutos() {
             return this.$store.state.listaProdutos
-        }
+        },
+
+
     },
     methods: {
         adicionaPagamento() {

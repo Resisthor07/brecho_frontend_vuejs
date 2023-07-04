@@ -7,7 +7,7 @@ export default class VendaClient {
 
     constructor() {
         this.axiosCliente = axios.create({
-            baseURL: 'http://localhost:8090/api/venda',
+            baseURL: 'http://localhost:8087/api/venda',
             headers: { 'Content-Type': 'application/json' }
         });
     }
