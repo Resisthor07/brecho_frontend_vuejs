@@ -80,7 +80,7 @@ export default {
     },
     methods: {
         adicionaPagamento() {
-            VendaClient.cadastrar(this.venda)
+            VendaClient.altera(this.venda)
                 .then(response => {
                     this.venda.pagamento = this.selectPagamento;
                     this.venda.produtos = this.listaProdutos;

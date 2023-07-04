@@ -11,7 +11,6 @@
                     <p class="dongle-regular f40 c313 my-0">{{ this.produto.nome }}</p>
 
                     <article class="d-flex flex-row w-100 dongle-light f27 c313">
-
                         <p class="c313 my-0">Tam.: {{ this.produto.tamanho }}</p>
                     </article>
 
@@ -26,23 +25,22 @@
                     </p>
 
                     <v-col class="row">
-                        <v-col cols="6" class="px-3">
+                        <v-col cols="12" class="px-0">
                             <v-sheet>
-
-                                <button @click="adicionarAoCarrinho()" class="btn-compra borda-padrao">
-                                    <v-icon>mdi-currency-usd</v-icon>
-                                    <p class="dongle-light f25 c313 ma-0">Adicionar ao carrinho</p>
+                                <button @click="adicionarAoCarrinho()" class="btn-compra borda-padrao d-flex justify-center align-center">
+                                    <v-icon>mdi-plus-circle-outline</v-icon>
+                                    <p class="dongle-light f25 c313 ma-0" style="line-height: none;">Adicionar ao carrinho</p>
                                 </button>
                             </v-sheet>
                         </v-col>
-                        <router-link>
-                            <v-col cols="6" class="px-3">
-                                <button class="btn-compra borda-padrao dongle-regular f25 c313">
-                                    <v-icon>mdi-plus-circle-outline</v-icon>
 
-                                </button>
-                            </v-col>
-                        </router-link>
+                        <!-- <v-col cols="6" class="px-3">
+                            <button class="btn-compra borda-padrao dongle-regular f25 c313">
+                                <v-icon>mdi-plus-circle-outline</v-icon>
+
+                            </button>
+                        </v-col> -->
+
                     </v-col>
 
                 </v-col>
@@ -100,13 +98,6 @@ export default {
             console.log(this.produto.id + 'adicinado')
         }
     }
-
-
-
-
-
-
-
 
 }
 </script>
