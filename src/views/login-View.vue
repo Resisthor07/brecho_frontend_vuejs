@@ -28,7 +28,7 @@
           <v-text-field
             font-family="Dongle Regular"
             background-color="rgba(217, 217, 217, 0.51)"
-            v-model="password"
+            v-model="Password"
             :rules="[rules.required, rules.min]"
             :type="show1 ? 'text' : 'password'"
             name="input-10-1"
@@ -62,26 +62,55 @@
 
 </template>
 
-<script>
+<script >
+
+import administradorClient from "../clients/administrador-client"
+
+
 export default {
   data() {
+
     return {
       username: '',
-      password: 'Password',
+      Password: 'Password',
+      administradorClient: new administradorClient(),
         rules: {
           required: value => !!value || 'Required.',
-          min: v => v.length >= 8 || 'Min 8 characters',
+          min: v => v.length >= 8 || 'Min 11 characters',
           emailMatch: () => (`The email and password you entered don't match`),
-        }
+        },
+        show1: false,
       
     };
   }, 
   methods: {
-    openNewWindow() {
-      window.open('http://localhost:3000/pedidos', '_blank')
+    async openNewWindow() {
+      this.verificaLogin();
+    },
+    async verificaLogin() {
+      try {
+        const response = await this.administradorClient.login({
+          username: this.username,
+          password: this.Password
+        });
+
+        if (response.data === 'Autenticado com sucesso') {
+          // Login successful, open new window
+          window.open('http://localhost:3000/pedidos', '_blank');
+        } else {
+          alert('Login inválido. Verifique suas credenciais.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Erro ao autenticar. Login ou senha incorretos.');
+      }
     }
   }
-};
+}
+
+  
+
+
 </script>
 
 <style scoped lang="scss">
