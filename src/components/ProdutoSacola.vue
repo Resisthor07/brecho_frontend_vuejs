@@ -1,41 +1,48 @@
 <template>
 <v-container>
 
-  <v-col cols="12" sm="12">
+  <v-col cols="12" sm="12" >
+
     <v-card>
 
-  <v-row v-for="item in produto"
-  :key="item.id"
+  <v-row
+         class="align-content-center"
   >
 
-    <v-col cols="12" sm="2">
+    <v-col cols="12" sm="2 ">
+      <router-link :to="{name: 'ProductDetail', query: {id: produto.id}}">
       <v-img
-          max-width="1000"
-      :src="item.fotosDoProduto"
+          class="ma-3"
+          max-width="75"
+      :src="produto.fotosDoProduto"
       ></v-img>
-
+      </router-link>
     </v-col>
 
     <v-col cols="12" sm="4"
-    class="align-center"
+    class="mt-8 align-center flex-column justify-space-between"
     >
-      <v-row      >
-        {{item.nome}}
+      <v-row
+
+      >
+        {{produto.nome}}
       </v-row>
       <v-row      >
-       Tam: {{item.tamanho}}
+       Tam: {{produto.tamanho}}
       </v-row>
 
     </v-col>
 
-    <v-col cols="12" sm="2">
+    <v-col cols="12" sm="2"
+           class="mt-8 align-center flex-column justify-space-between"
+    >
 
-      {{formataValor(item.valorAtual)}}
+      {{formataValor(produto.valorAtual)}}
     </v-col>
 
     <v-col cols="12" sm="2" class="d-flex justify-end">
       <v-icon
-          @click="removerSacola(item.id)"
+          @click="removerSacola(produto.id)"
           color="red" large>mdi-delete-outline</v-icon>
     </v-col>
 
@@ -43,6 +50,7 @@
 
       <v-divider></v-divider>
     </v-card>
+
   </v-col>
   <v-divider></v-divider>
 
@@ -68,7 +76,7 @@ export default {
   },
 
   props:{
-    produto: Array
+    produto: Object
 
   },
 

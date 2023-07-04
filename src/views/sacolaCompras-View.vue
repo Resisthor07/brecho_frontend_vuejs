@@ -2,19 +2,23 @@
 
   <main-layout>
     <v-container>
-      <v-row class="flex-row">
+      <v-row class="flex-row align-center">
 
-        <v-col class="flex justify-center">
+        <v-col class="flex justify-center align-content-center">
           <v-icon size="40" color="#ff1617">mdi-shopping-outline</v-icon>
-          <span class="c313 dongle-regular f40 posicionamento_texto_desejo">Sacola de Compras</span>
+          <span class="c313 dongle-regular f40 posicionamento_texto_desejo ml-6">Sacola de Compras</span>
         </v-col>
       </v-row>
 
       <v-row>
         <v-col class="flex justify-center">
-          <span class="c313 dongle-light f35">{{
+          <span v-if="quantidade>0" class="c313 dongle-light f35">{{
               quantidade
-            }} items adicionado(s) em sua lista</span>
+            }} produtos adicionados em sua sacola de compras</span>
+          <span v-if="quantidade<1" class="c313 dongle-light f35">{{
+              quantidade
+            }} Sua sacola de compras está vazia.</span>
+
 
         </v-col>
 
@@ -22,8 +26,30 @@
       <v-divider color="black"></v-divider>
       <v-row>
 
-        <v-col cols="12" sm=9>
-          <produto-sacola :produto="produtos"></produto-sacola>
+        <v-col cols="12" sm=9 >
+          <v-list-item-group
+
+              class="flex-column">
+            <v-list-item
+
+
+                class="d-flex flex-column justify-center align-center"
+                v-for="produtos in produtos" :key="produtos.id">
+
+          <produto-sacola              :produto="produtos"></produto-sacola>
+            </v-list-item>
+          </v-list-item-group>
+          <router-link to="/">
+            <v-btn
+                v-if="quantidade<1"
+                class="mt-16"
+
+                color="primary" x-large>
+
+              <v-icon>mdi-arrow-left</v-icon>
+              Aproveite nossos produtos e faça suas compras.
+            </v-btn>
+          </router-link>
         </v-col>
         <v-divider class="mt-3" vertical color="black"></v-divider>
         <v-col cols="12" sm="3">
@@ -126,6 +152,7 @@ export default {
     recarregaPagina: function () {
       this.produtos = []
       this.findById()
+      this.quantidade = 0
     }
 
   },

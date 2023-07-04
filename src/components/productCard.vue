@@ -1,16 +1,17 @@
 <template>
   <v-container fluid elevation="0">
-
+<v-hover
+v-slot="{ hover }"
+open-delay="100"
+>
     <v-card
-
-        class="ma-0  "
+        :elevation="hover ? 10 : 2"
+        :class=" {'on-hover': hover} "
         width="280"
         min-height="580"
-        elevation="0"
         outlined
         rounded
     >
-
       <v-card-text class="containeIimg d-flex justify-end ">
         <v-icon class="favoriteIcon "
                 :color="corIcone"
@@ -19,8 +20,6 @@
         >{{ iconeFavorito }}
         </v-icon>
       </v-card-text>
-     
-      
       <router-link :to="{name: 'ProductDetail', query: {id: produto.id}}">
       <div>
         <img
@@ -40,6 +39,7 @@
       </router-link>
 
     </v-card>
+</v-hover>
 
   </v-container>
 </template>

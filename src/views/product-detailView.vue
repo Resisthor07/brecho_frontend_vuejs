@@ -8,43 +8,39 @@
                     </div>
                 </v-col>
                 <v-col cols="12" lg="6" class="d-flex flex-column justify-center align-start">
-                    <p class="dongle-regular f40 c313 my-0">{{this.produto.nome  }}</p>
+                    <p class="dongle-regular f40 c313 my-0">{{ this.produto.nome }}</p>
 
                     <article class="d-flex flex-row w-100 dongle-light f27 c313">
-
-                        <p class="c313 my-0">Tam.: {{this.produto.tamanho}}</p>
+                        <p class="c313 my-0">Tam.: {{ this.produto.tamanho }}</p>
                     </article>
 
-                    <p class="dongle-regular c313 f35">{{formataValor(this.produto.valorAtual)}}</p>
+                    <p class="dongle-regular c313 f35">{{ formataValor(this.produto.valorAtual) }}</p>
 
                     <div class="borda-padrao" style="width: 100%; border-radius: 50%;"></div>
 
                     <p class="dongle-regular c313 f30">Descrição:</p>
                     <p class="dongle-light c313 f25 text-left">{{
                         this.produto.descricao
-                      }}
+                    }}
                     </p>
 
                     <v-col class="row">
-                        <v-col cols="6" class="px-3">
+                        <v-col cols="12" class="px-0">
                             <v-sheet>
-
-                                <button
-                                    @click="adicionarAoCarrinho()"
-                                    class="btn-compra borda-padrao">
-                                    <v-icon>mdi-currency-usd</v-icon>
-                                    <p class="dongle-light f25 c313 ma-0">Adicionar ao carrinho</p>
+                                <button @click="adicionarAoCarrinho()" class="btn-compra borda-padrao d-flex justify-center align-center">
+                                    <v-icon>mdi-plus-circle-outline</v-icon>
+                                    <p class="dongle-light f25 c313 ma-0" style="line-height: none;">Adicionar ao carrinho</p>
                                 </button>
                             </v-sheet>
                         </v-col>
-                        <router-link>
-                            <v-col cols="6" class="px-3">
-                                <button class="btn-compra borda-padrao dongle-regular f25 c313">
-                                    <v-icon>mdi-plus-circle-outline</v-icon>
 
-                                </button>
-                            </v-col>
-                        </router-link>
+                        <!-- <v-col cols="6" class="px-3">
+                            <button class="btn-compra borda-padrao dongle-regular f25 c313">
+                                <v-icon>mdi-plus-circle-outline</v-icon>
+
+                            </button>
+                        </v-col> -->
+
                     </v-col>
 
                 </v-col>
@@ -56,7 +52,7 @@
 <script>
 import MainLayout from '@/components/main-layout';
 import ProdutoClient from "@/clients/produto-client";
-import {useSacolaStore} from "@/store/sacolaStore";
+import { useSacolaStore } from "@/store/sacolaStore";
 //import ProdutoClient from '@/clients/produto-client';
 
 export default {
@@ -65,51 +61,43 @@ export default {
         MainLayout
     },
 
-  data: () => ({
-    produto: Object,
-  }),
+    data: () => ({
+        produto: Object,
+    }),
 
-  computed:{
-      Id(){
-      return this.$route.query.id;
+    computed: {
+        Id() {
+            return this.$route.query.id;
+        }
+    },
+
+    created() {
+        console.log(this.Id)
+        this.findById(this.Id);
+
+
+    },
+
+    methods: {
+
+
+        formataValor(valor) {
+            return valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' });
+        },
+
+        async findById(id) {
+            const getApi = new ProdutoClient();
+
+            this.produto = await getApi.findById(Number(id));
+            console.log(this.produto);
+
+        },
+
+        adicionarAoCarrinho: function () {
+            useSacolaStore().adionarSacola(this.produto.id)
+            console.log(this.produto.id + 'adicinado')
+        }
     }
-  },
-
-
-  created(){
-    console.log(this.Id)
-    this.findById(this.Id);
-
-
-  },
-
-    methods:{
-
-
-      formataValor(valor) {
-        return valor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
-      },
-
-      async findById(id){
-        const getApi = new ProdutoClient();
-
-        this.produto = await getApi.findById(Number(id));
-        console.log(this.produto);
-
-      },
-
-      adicionarAoCarrinho: function (){
-        useSacolaStore().adionarSacola(this.produto.id)
-        console.log(this.produto.id  + 'adicinado')
-      }
-    }
-
-
-
-
-
-
-
 
 }
 </script>

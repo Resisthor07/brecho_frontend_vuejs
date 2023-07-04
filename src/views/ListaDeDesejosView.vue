@@ -9,9 +9,10 @@
       </v-row>
       <v-row>
         <v-col class="col_desejo">
-          <span class="c313 dongle-light f35" >{{
+          <span v-if="quantidade<1" class="c313 dongle-light f35" > Sua Lista de desejos está vazia.</span>
+          <span v-if="quantidade>0" class="c313 dongle-light f35" >{{
               quantidade
-            }} items adicionado(s) em sua lista</span>
+            }} produtos adicionados em sua lista de desejos</span>
         </v-col>
       </v-row>
 
@@ -57,8 +58,6 @@ export default {
     recarregaPagina(){
       return useFavoritosStore().change
     }
-
-
   },
 
   watch: {
@@ -66,9 +65,9 @@ export default {
     recarregaPagina: function () {
       this.produtos = []
       this.findById()
+      this.quantidade = this.produtos.length
     }
-  }
-,
+  },
 
   created: function () {
 
@@ -84,7 +83,6 @@ export default {
   methods: {
 
     async    findById(){
-
       const getApi = new ProdutoClient();
       const valor = useFavoritosStore().listaFavoritos
       console.log(valor)

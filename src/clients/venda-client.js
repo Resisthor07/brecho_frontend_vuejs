@@ -21,7 +21,13 @@ export default class VendaClient {
         }
     }
 
-
+    async altera(cliente) {
+        try{
+            return (await this.axiosCliente.put('', cliente))
+        }catch (error){
+            return Promise.reject(error.response)
+        }
+    }
 
 
 }
