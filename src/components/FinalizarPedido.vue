@@ -1,4 +1,5 @@
 <template>
+  <v-container>
 <v-card>
   <v-card-title>Compra realizada com sucesso.</v-card-title>
 
@@ -13,6 +14,7 @@
   >Vamos dar mais uma olhadinha nos produtos?</v-btn>
   </router-link>
 </v-card>
+  </v-container>
 </template>
 
 <script>

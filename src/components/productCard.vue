@@ -8,7 +8,7 @@ open-delay="100"
         :elevation="hover ? 10 : 2"
         :class=" {'on-hover': hover} "
         width="280"
-        min-height="580"
+        min-height="400"
         outlined
         rounded
     >
@@ -29,7 +29,7 @@ open-delay="100"
             :src="produto.fotosDoProduto"
         />
       </div>
-      
+      <v-divider class="mx-2"></v-divider>
       <v-card-title
       >{{ produto.nome }}</v-card-title>
       <v-card-title>{{ formataValor(produto.valorAtual)}}</v-card-title>

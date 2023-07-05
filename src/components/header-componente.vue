@@ -29,8 +29,8 @@
           <router-link to="sacola">
             <v-btn elevation="0" color="white">
               <v-icon>mdi-shopping-outline</v-icon>
-              <span v-if="this.checaMudanca <= 1" class="text--accent-2 ">{{ checaMudanca }} Item</span>
-              <span v-if="this.checaMudanca > 1" class="text--accent-2 ">{{ checaMudanca }} Itens</span>
+              <span v-if="this.checaMudanca <= 1" class="text--accent-2 ">{{ checaMudanca -1 }} Item</span>
+              <span v-if="this.checaMudanca > 1" class="text--accent-2 ">{{ checaMudanca -1 }} Itens</span>
             </v-btn>
           </router-link>
           <router-link to="/lista-de-desejos">
@@ -79,13 +79,13 @@ export default {
       nome: "calças"
     },
       {
-        nome: "Blusas"
+        nome: "Blusa"
       },
       {
         nome: "Camisas"
       },
       {
-        nome: "Blazers"
+        nome: "Blazer"
       },
       {nome: "Acessórios"}
     ]

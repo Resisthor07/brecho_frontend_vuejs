@@ -3,7 +3,7 @@
     <v-container class="principal_desejo">
       <v-row>
         <v-col class="col_desejo titulo_poscionamento_desejo">
-          <v-icon size="40" color="#ff1617">mdi-star</v-icon>
+          <v-icon size="40" color="yellow darken-3">mdi-star</v-icon>
           <span class="c313 dongle-regular f40 posicionamento_texto_desejo">Lista de desejos</span>
         </v-col>
       </v-row>
@@ -22,6 +22,7 @@
 
         </v-col>
       </v-row>
+
     </v-container>
   </main-layout>
 
@@ -81,6 +82,8 @@ export default {
   },
 
   methods: {
+
+
 
     async    findById(){
       const getApi = new ProdutoClient();
